@@ -4,7 +4,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-teal-900 text-white h-16 md:h-20 flex flex-col md:flex-row items-center justify-between px-6 md:px-12 ">
+    <nav className="bg-teal-900 text-white h-16 md:h-20 flex flex-col md:flex-row items-center justify-between px-6 md:px-12 " id="top">
       <div className="text-2xl font-bold mb-4 md:mb-0 hidden md:block">
         TRENDSPIRE
       </div>

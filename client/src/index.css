@@ -7,6 +7,10 @@
   font-family: Poppins;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 .kalnia-glaze-main-heading {
   font-family: "Kalnia Glaze", serif;
   font-optical-sizing: auto;

@@ -48,7 +48,7 @@ const AboutUs = () => {
             <div className="w-24 h-24 bg-orange-50 rounded-full  md:bg-transparent  flex justify-center items-center mb-4 md:mb-0 md:mr-4">
               <div
                 className="w-16 h-16 bg-contain bg-no-repeat bg-center"
-                style={{ backgroundImage: "url('/public/images/update.png')" }}
+                style={{ backgroundImage: "url('/public/images/trend.png')" }}
               />
             </div>
             <div>
@@ -66,7 +66,7 @@ const AboutUs = () => {
             <div className="w-24 h-24 bg-indigo-50 rounded-full  md:bg-transparent  flex justify-center items-center mb-4 md:mb-0 md:mr-4">
               <div
                 className="w-16 h-16 bg-contain bg-no-repeat bg-center"
-                style={{ backgroundImage: "url('/public/images/trend.png')" }}
+                style={{ backgroundImage: "url('/public/images/update.png')" }}
               />
             </div>
             <div>

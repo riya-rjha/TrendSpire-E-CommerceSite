@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="flex flex-col mb-12 md:mb-0">
             <h2 className="text-3xl font-bold mb-4">Exclusive</h2>
             <p className="text-xl mb-4">Subscribe</p>
-            <p className="mb-6">Get 10% off your first order</p>
+            <p className="mb-6">Get 35% off on your first order</p>
             <div className="flex items-center bg-white text-[#134E4A] rounded">
               <input
                 type="email"
