@@ -1,0 +1,48 @@
+{
+    "categories": [
+      "Men’s Fashion",
+      "Women’s Fashion",
+      "Women Accessories",
+      "Men Accessories",
+      "Discount Deals"
+    ],
+    "products": [
+      {
+        "name": "Shiny Dress",
+        "price": "Rs. 980",
+        "image": "https://via.placeholder.com/336x244",
+        "rating": 4
+      },
+      {
+        "name": "White Dress",
+        "price": "Rs. 1350",
+        "image": "https://via.placeholder.com/336x244",
+        "rating": 3
+      },
+      {
+        "name": "Long Dress",
+        "price": "Rs. 1460",
+        "image": "https://via.placeholder.com/336x244",
+        "rating": 4
+      },
+      {
+        "name": "Colorful Dress",
+        "price": "Rs. 1580",
+        "image": "https://via.placeholder.com/336x244",
+        "rating": 5
+      },
+      {
+        "name": "Full Sweater",
+        "price": "Rs. 2340",
+        "image": "https://via.placeholder.com/336x244",
+        "rating": 2
+      },
+      {
+        "name": "White Shirt",
+        "price": "Rs. 870",
+        "image": "https://via.placeholder.com/336x244",
+        "rating": 4
+      }
+    ]
+  }
+  
