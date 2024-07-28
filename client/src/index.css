@@ -1,8 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wdth,wght@105.1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Poppins;
+}
+
+.kalnia-glaze-main-heading {
+  font-family: "Kalnia Glaze", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings: "wdth" 105.1;
+}
+
+.exo-2-headings {
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
 }
 
 @tailwind base;
