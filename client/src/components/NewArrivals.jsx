@@ -3,7 +3,7 @@ import data from "../Data/data.json";
 
 const NewArrivals = () => {
   return (
-    <div className="bg-gradient-to-b from-white to-neutral-50 p-4 md:p-8">
+    <div className="bg-gradient-to-b from-white to-neutral-50 p-4 md:p-8" id="NewArrivals">
       {/* Title Section */}
       <div className="text-center mb-8">
         <h1 className="exo-2-headings uppercase font-extrabold text-5xl text-[#134E4A] mb-4">

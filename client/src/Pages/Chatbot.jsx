@@ -8,20 +8,22 @@ const Chatbot = () => {
       <div className="flex flex-col lg:flex-row w-full max-w-5xl bg-white rounded-lg shadow-lg overflow-hidden min-h-[inherit] my-5">
         
         {/* Sidebar */}
-        <div className="w-full lg:w-1/6 bg-teal-900 p-2 lg:p-4 flex flex-col items-center justify-between">
+        <div className="w-full lg:w-[120px] bg-teal-900 p-2 lg:p-4 flex flex-col items-center justify-between">
           <Link to="/">
             <div className="w-12 h-12 lg:w-16 lg:h-16 cursor-pointer bg-teal-800 rounded-full flex items-center justify-center mb-4">
+                
               {/* Hamburger Icon */}
               <img 
-                className="w-8 h-8 lg:w-12 lg:h-12" 
+                className=" w-8 h-8 lg:w-12 lg:h-12" 
                 src="https://cdn-icons-png.freepik.com/256/10239/10239190.png?ga=GA1.1.448448890.1721050418&semt=ais_hybrid" 
                 alt="Back"
               />
             </div>
+            
           </Link>
-          <div className="w-16 h-16 lg:w-20 lg:h-20 bg-red-300 rounded-3xl flex items-center justify-center mb-4">
+          <div className="w-16 hidden md:flex h-16 lg:w-20 lg:h-20 bg-red-300 rounded-3xl items-center justify-center mb-4">
             <img
-              className="w-16 h-16 lg:w-20 lg:h-20 object-cover rounded-3xl"
+              className="w-16 h-16 lg:w-20 lg:h-20 object-cover rounded-3xl "
               src="https://img.freepik.com/premium-photo/smiling-friendly-woman-wearing-longsleeve-top-article-clothing-fashion_1061358-44588.jpg?ga=GA1.1.448448890.1721050418&semt=ais_user"
               alt="Placeholder"
             />
@@ -46,7 +48,7 @@ const Chatbot = () => {
           <div className="bg-neutral-50 rounded-xl border-2 border-neutral-200 flex items-center mt-auto">
             <input
               type="text"
-              placeholder="Type a new message here"
+              placeholder="Type a new message"
               className="flex-1 p-2 text-neutral-700 text-sm lg:text-base font-montserrat rounded-l-xl focus:outline-none"
             />
             <div className="hidden md:flex">
@@ -70,7 +72,7 @@ const Chatbot = () => {
         </div>
 
         {/* Trash Bin Icons (Visible only on larger screens) */}
-        <div className="hidden lg:flex w-full lg:w-1/6 bg-teal-900 p-2 lg:p-4 justify-evenly flex-col items-center">
+        <div className="hidden w-full lg:flex lg:w-[80px] bg-teal-900 p-2 lg:p-4 justify-evenly flex-col items-center">
           {[...Array(7)].map((_, index) => (
             <button
               key={index}

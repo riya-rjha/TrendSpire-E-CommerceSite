@@ -2,7 +2,10 @@ import React from "react";
 
 const Testimonials = () => {
   return (
-    <div className="relative p-4 flex flex-col items-center space-y-6">
+    <div
+      className="relative p-4 flex flex-col items-center space-y-6"
+      id="Testimonials"
+    >
       <h2 className="text-center text-[#134E4A] text-4xl exo-2-headings uppercase font-extrabold">
         This Is What Our Customers Say
       </h2>
@@ -19,10 +22,15 @@ const Testimonials = () => {
           </div>
           <div className="text-center ">
             <p className="text-[#134E4A] text-sm font-normal mt-2">
-              “Just what I was looking for. Thank you for making it painless, pleasant and most of all hassle free! All products are great.”
+              “Just what I was looking for. Thank you for making it painless,
+              pleasant and most of all hassle free! All products are great.”
             </p>
-            <p className="text-[#134E4A] text-xl mt-2 font-semibold">UI Designer</p>
-            <p className="text-[#134E4A] text-xl font-normal font-['Volkhov']">Megen W.</p>
+            <p className="text-[#134E4A] text-xl mt-2 font-semibold">
+              UI Designer
+            </p>
+            <p className="text-[#134E4A] text-xl font-normal font-['Volkhov']">
+              Megen W.
+            </p>
             <div className="w-16 h-1 bg-[#134E4A] mx-auto my-2" />
           </div>
         </div>
@@ -38,10 +46,15 @@ const Testimonials = () => {
           </div>
           <div className="text-center ">
             <p className="text-[#134E4A] text-sm font-normal mt-2">
-              “Items That I ordered were the best investment I ever made. I can't say enough about your quality service.”
+              “Items That I ordered were the best investment I ever made. I
+              can't say enough about your quality service.”
             </p>
-            <p className="text-[#134E4A] text-xl mt-2 font-semibold ">UI Designer</p>
-            <p className="text-[#134E4A] text-xl font-normal font-['Volkhov']">Suzan B.</p>
+            <p className="text-[#134E4A] text-xl mt-2 font-semibold ">
+              UI Designer
+            </p>
+            <p className="text-[#134E4A] text-xl font-normal font-['Volkhov']">
+              Suzan B.
+            </p>
             <div className="w-16 h-1 bg-[#134E4A] mx-auto my-2" />
           </div>
         </div>
@@ -57,10 +70,15 @@ const Testimonials = () => {
           </div>
           <div className="text-center ">
             <p className="text-[#134E4A] text-sm font-normal mt-2">
-              "You won't regret it. I would like to personally thank you for your outstanding product. Absolutely wonderful!"
+              "You won't regret it. I would like to personally thank you for
+              your outstanding product. Absolutely wonderful!"
             </p>
-            <p className="text-[#134E4A] text-xl mt-2 font-semibold">Traveler</p>
-            <p className="text-[#134E4A] text-xl font-normal font-['Volkhov']">James K.</p>
+            <p className="text-[#134E4A] text-xl mt-2 font-semibold">
+              Traveler
+            </p>
+            <p className="text-[#134E4A] text-xl font-normal font-['Volkhov']">
+              James K.
+            </p>
             <div className="w-16 h-1 bg-[#134E4A] mx-auto my-2" />
           </div>
         </div>

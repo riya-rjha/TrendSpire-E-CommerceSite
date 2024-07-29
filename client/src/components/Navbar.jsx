@@ -16,28 +16,28 @@ const Navbar = () => {
       </Link>
 
       <button
-        className="md:hidden text-3xl focus:outline-none my-3"
+        className={`md:hidden text-3xl focus:outline-none my-3 ${isMenuOpen ? 'hamburger-rotate' : 'hamburger-reset'}`}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
-        {isMenuOpen ? "✖️" : "☰"}
+        {isMenuOpen ? "❌" : "☰"}
       </button>
 
       <div
-        className={`flex flex-col md:flex-row md:gap-12 text-base transition-transform transform ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        className={`flex flex-col md:flex-row md:gap-12 text-base ${
+          isMenuOpen ? 'menu-enter' : 'menu-exit hidden md:flex'
         } md:translate-x-0 md:items-center fixed md:relative top-[60px] left-0 md:top-auto md:left-auto bg-teal-900 md:bg-transparent w-full md:w-auto h-screen md:h-auto z-50 transition-all duration-300`}
       >
         <a href="#" className="px-4 py-2 hover:text-teal-300 transition-colors">
           Home
         </a>
-        <a href="#" className="px-4 py-2 hover:text-teal-300 transition-colors">
-          Deals
+        <a href="#About" className="px-4 py-2 hover:text-teal-300 transition-colors">
+          About Us
         </a>
-        <a href="#" className="px-4 py-2 hover:text-teal-300 transition-colors">
+        <a href="#NewArrivals" className="px-4 py-2 hover:text-teal-300 transition-colors">
           New Arrivals
         </a>
-        <a href="#" className="px-4 py-2 hover:text-teal-300 transition-colors">
-          Packages
+        <a href="#Testimonials" className="px-4 py-2 hover:text-teal-300 transition-colors">
+          Testimonials
         </a>
 
         <div className="flex flex-col md:flex-row gap-4 mt-4 md:mt-0">
