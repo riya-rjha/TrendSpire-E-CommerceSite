@@ -1,13 +1,20 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-teal-900 text-white h-16 md:h-20 flex flex-col md:flex-row items-center justify-between px-6 md:px-12 " id="top">
-      <div className="text-2xl font-bold mb-4 md:mb-0 hidden md:block">
-        TRENDSPIRE
-      </div>
+    <nav
+      className="bg-teal-900 text-white h-16 md:h-20 flex flex-col md:flex-row items-center justify-between px-6 md:px-12 "
+      id="top"
+    >
+      <Link to='/'>
+        {" "}
+        <div className="text-2xl font-bold mb-4 md:mb-0 hidden md:block">
+          TRENDSPIRE
+        </div>
+      </Link>
 
       <button
         className="md:hidden text-3xl focus:outline-none my-3"
