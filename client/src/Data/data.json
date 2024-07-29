@@ -10,38 +10,44 @@
       {
         "name": "Shiny Dress",
         "price": "Rs. 980",
-        "image": "https://via.placeholder.com/336x244",
-        "rating": 4
+        "image": "/public/images/dresses/shiny.jpg",
+        "rating": 4,
+        "stock": "no"
       },
       {
         "name": "White Dress",
         "price": "Rs. 1350",
-        "image": "https://via.placeholder.com/336x244",
-        "rating": 3
+        "image": "/public/images/dresses/white.avif",
+        "rating": 3,
+        "stock": "yes"
       },
       {
         "name": "Long Dress",
         "price": "Rs. 1460",
-        "image": "https://via.placeholder.com/336x244",
-        "rating": 4
+        "image": "/public/images/dresses/long.avif",
+        "rating": 4,
+        "stock": "yes"
       },
       {
         "name": "Colorful Dress",
         "price": "Rs. 1580",
-        "image": "https://via.placeholder.com/336x244",
-        "rating": 5
+        "image": "/public/images/dresses/colorful.avif",
+        "rating": 5,
+        "stock": "yes"
       },
       {
         "name": "Full Sweater",
         "price": "Rs. 2340",
-        "image": "https://via.placeholder.com/336x244",
-        "rating": 2
+        "image": "/public/images/dresses/sweater.avif",
+        "rating": 2,
+        "stock": "no"
       },
       {
         "name": "White Shirt",
         "price": "Rs. 870",
-        "image": "https://via.placeholder.com/336x244",
-        "rating": 4
+        "image": "/public/images/dresses/shirt.avif",
+        "rating": 4,
+        "stock": "yes"
       }
     ]
   }

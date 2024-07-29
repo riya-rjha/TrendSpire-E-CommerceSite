@@ -20,9 +20,7 @@ const NewArrivals = () => {
         {data.categories.map((category, index) => (
           <div
             key={index}
-            className={`bg-white rounded-lg shadow-md text-center ${
-              index === 1 ? "bg-black" : "bg-neutral-50"
-            } ${index === 1 ? "text-white" : "text-gray-500"} p-4`}
+            className={`bg-gray-200 text-black rounded-lg shadow-md text-center cursor-pointer hover:bg-gray-300 transition-all delay-75 min-w-[200px] mt-3 p-4`}
           >
             <p className="text-base">{category}</p>
           </div>
@@ -34,7 +32,7 @@ const NewArrivals = () => {
         {data.products.map((product, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-md overflow-hidden"
+            className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105"
           >
             <img
               className="w-full h-48 object-cover"
@@ -52,18 +50,34 @@ const NewArrivals = () => {
               <p className="text-xl font-semibold text-gray-700 mb-2">
                 {product.price}
               </p>
-              <p className="text-lg text-red-500 mb-1">Almost Sold Out</p>
+              <div
+                className={`text-lg mb-1 ${
+                  product.stock === "yes" ? "text-green-600" : "text-red-500"
+                }`}
+              >
+                {product.stock === "yes" ? (
+                  <p className="font-bold">
+                    In Stock, <span className="font-normal">Lucky you!</span>
+                  </p>
+                ) : (
+                  <p className="font-bold">
+                    Almost sold out,{" "}
+                    <span className="font-normal">Hurry up!</span>
+                  </p>
+                )}
+              </div>
+
+              {/* Add to Cart Button */}
+              <div className="text-center mt-4">
+                <button className="bg-[#134E4A] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#0f3e3a] focus:outline-none focus:ring-2 focus:ring-[#134E4A] focus:ring-opacity-50 transition duration-300 w-full">
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
         ))}
       </div>
-
-      {/* View More Button */}
-      <div className="text-center mt-8">
-        <button className="bg-[#134E4A] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[#0f3e3a] focus:outline-none focus:ring-2 focus:ring-[#134E4A] focus:ring-opacity-50 transition duration-300">
-          View More
-        </button>
-      </div>
+   
     </div>
   );
 };
