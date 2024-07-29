@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
@@ -28,9 +29,11 @@ const Main = () => {
         <p className="mt-4 text-2xl text-gray-600">
           Get Trend Insights with Our AI Chatbot
         </p>
-        <button className="mt-6 px-6 py-3 bg-teal-900 text-white font-bold rounded-lg shadow hover:bg-teal-700 transition duration-300">
-          TALK TO IVY!
-        </button>
+        <Link to="/chat">
+          <button className="mt-6 px-6 py-3 bg-teal-900 text-white font-bold rounded-lg shadow hover:bg-teal-700 transition duration-300">
+            TALK TO IVY!
+          </button>
+        </Link>
         <img
           src="/public/images/fashion-3.avif"
           alt="Fashion Bottom"
