@@ -41,17 +41,17 @@ const Navbar = () => {
         </a>
 
         <div className="flex flex-col md:flex-row gap-4 mt-4 md:mt-0">
-          <a
-            href="#"
+          <Link
+            to='/user/register'
             className="bg-teal-700 px-4 py-2 rounded-lg text-base font-bold hover:bg-teal-600 transition-colors"
           >
             Register
-          </a>
+          </Link>
           <a
             href="#"
             className="text-zinc-300 px-4 py-2 rounded-lg text-base bg-gray-800 hover:bg-gray-700 hover:text-white transition-colors font-bold"
           >
-            Sign In
+            Login
           </a>
         </div>
       </div>

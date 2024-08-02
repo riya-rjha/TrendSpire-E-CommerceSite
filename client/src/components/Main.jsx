@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
-    <div className="flex flex-col items-center justify-center md:flex-row md:justify-between p-4 space-y-6 md:space-y-0 md:space-x-6">
+    <div className="flex flex-col items-center justify-center md:flex-row md:justify-between p-10 space-y-6 md:space-y-0 md:space-x-6">
       <div className="hidden md:block">
         <img
           src="/public/images/fashion-2.avif"

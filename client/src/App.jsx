@@ -7,6 +7,8 @@ import NewArrivals from "./components/NewArrivals";
 import Testimonials from "./components/Testimonials";
 import Chatbot from "./Pages/Chatbot";
 import { Route, Routes, useLocation } from "react-router-dom";
+import Register from "./Pages/Register";
+import Login from "./Pages/Login";
 
 const App = () => {
   const location = useLocation();
@@ -24,13 +26,13 @@ const App = () => {
           />
         </a>
       )}
+      <Navbar />
 
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Navbar />
               <Main />
               <AboutUs />
               <NewArrivals />
@@ -43,11 +45,12 @@ const App = () => {
           path="/chat"
           element={
             <>
-              <Navbar />
               <Chatbot />
             </>
           }
         ></Route>
+        <Route path="/user/register" element={<Register />}></Route>
+        <Route path="/user/login" element={<Login />}></Route>
       </Routes>
     </div>
   );

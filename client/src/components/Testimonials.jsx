@@ -3,11 +3,11 @@ import React from "react";
 const Testimonials = () => {
   return (
     <div
-      className="relative p-4 flex flex-col items-center space-y-6"
+      className="relative p-4 flex flex-col items-center space-y-16 my-10"
       id="Testimonials"
     >
-      <h2 className="text-center text-[#134E4A] text-4xl exo-2-headings uppercase font-extrabold">
-        This Is What Our Customers Say
+      <h2 className="text-center text-[#134E4A] text-5xl exo-2-headings uppercase font-extrabold">
+        This Is What Our Customers Say!
       </h2>
 
       <div className="flex flex-col md:flex-row md:space-x-6 md:space-y-0 space-y-6 w-full max-w-6xl">
