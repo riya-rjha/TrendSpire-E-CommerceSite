@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import data from "../Data/data.json";
 
 const NewArrivals = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filteredProducts = data.products.filter((product) => {
+    if (selectedCategory === "All") return true;
+    return product.category === selectedCategory;
+  });
+
+  const displayedProducts =
+    selectedCategory === "All"
+      ? filteredProducts.slice(0, 12)
+      : filteredProducts;
+
   return (
-    <div className="bg-gradient-to-b from-white to-neutral-50 p-4 md:p-8" id="NewArrivals">
-      {/* Title Section */}
+    <div
+      className="bg-gradient-to-b from-white to-neutral-50 p-4 md:p-8"
+      id="NewArrivals"
+    >
       <div className="text-center mb-8">
         <h1 className="exo-2-headings uppercase font-extrabold text-5xl text-[#134E4A] mb-4">
           New Arrivals
@@ -15,21 +29,24 @@ const NewArrivals = () => {
         </p>
       </div>
 
-      {/* Categories */}
       <div className="flex flex-wrap justify-center gap-4 mb-8">
-        {data.categories.map((category, index) => (
+        {["All", ...data.categories].map((category, index) => (
           <div
             key={index}
-            className={`bg-gray-200 text-black rounded-lg shadow-md text-center cursor-pointer hover:bg-gray-300 transition-all delay-75 min-w-[200px] mt-3 p-4`}
+            onClick={() => setSelectedCategory(category)}
+            className={`bg-gray-200 text-black rounded-lg shadow-md text-center cursor-pointer transition-all delay-75 min-w-[200px] mt-3 p-4 ${
+              selectedCategory === category
+                ? "bg-gray-500 text-white"
+                : "hover:bg-gray-300"
+            }`}
           >
             <p className="text-base">{category}</p>
           </div>
         ))}
       </div>
 
-      {/* Products */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {data.products.map((product, index) => (
+        {displayedProducts.map((product, index) => (
           <div
             key={index}
             className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105"
@@ -67,7 +84,6 @@ const NewArrivals = () => {
                 )}
               </div>
 
-              {/* Add to Cart Button */}
               <div className="text-center mt-4">
                 <button className="bg-[#134E4A] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#0f3e3a] focus:outline-none focus:ring-2 focus:ring-[#134E4A] focus:ring-opacity-50 transition duration-300 w-full">
                   Add to Cart
@@ -77,7 +93,6 @@ const NewArrivals = () => {
           </div>
         ))}
       </div>
-   
     </div>
   );
 };

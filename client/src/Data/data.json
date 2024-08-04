@@ -1,54 +1,215 @@
 {
-    "categories": [
-      "Men’s Fashion",
-      "Women’s Fashion",
-      "Women Accessories",
-      "Men Accessories",
-      "Discount Deals"
-    ],
-    "products": [
-      {
-        "name": "Shiny Dress",
-        "price": "Rs. 980",
-        "image": "/public/images/dresses/shiny.jpg",
-        "rating": 4,
-        "stock": "no"
-      },
-      {
-        "name": "White Dress",
-        "price": "Rs. 1350",
-        "image": "/public/images/dresses/white.avif",
-        "rating": 3,
-        "stock": "yes"
-      },
-      {
-        "name": "Long Dress",
-        "price": "Rs. 1460",
-        "image": "/public/images/dresses/long.avif",
-        "rating": 4,
-        "stock": "yes"
-      },
-      {
-        "name": "Colorful Dress",
-        "price": "Rs. 1580",
-        "image": "/public/images/dresses/colorful.avif",
-        "rating": 5,
-        "stock": "yes"
-      },
-      {
-        "name": "Full Sweater",
-        "price": "Rs. 2340",
-        "image": "/public/images/dresses/sweater.avif",
-        "rating": 2,
-        "stock": "no"
-      },
-      {
-        "name": "White Shirt",
-        "price": "Rs. 870",
-        "image": "/public/images/dresses/shirt.avif",
-        "rating": 4,
-        "stock": "yes"
-      }
-    ]
-  }
-  
+  "categories": [
+    "Men’s Fashion",
+    "Women’s Fashion",
+    "Women Accessories",
+    "Men Accessories",
+    "Discount Deals"
+  ],
+  "products": [
+    {
+      "name": "Stylish Suit",
+      "price": "Rs. 3500",
+      "image": "https://img.freepik.com/free-photo/portrait-sexy-handsome-man-dressed-elegant-beige-checkered-suit_158538-4344.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 5,
+      "stock": "yes",
+      "category": "Men’s Fashion"
+    },
+    {
+      "name": "Casual Shirt",
+      "price": "Rs. 1200",
+      "image": "https://img.freepik.com/premium-photo/photography-handsome-men_1288657-32614.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 4,
+      "stock": "yes",
+      "category": "Men’s Fashion"
+    },
+    {
+      "name": "Jeans",
+      "price": "Rs. 1500",
+      "image": "https://img.freepik.com/premium-photo/baby-sneakerst-shirtjeans-pantsset-childrens-clothes-accessories-spring-autumn-summerfashion_820340-46162.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 4,
+      "stock": "yes",
+      "category": "Men’s Fashion"
+    },
+    {
+      "name": "Leather Jacket",
+      "price": "Rs. 2500",
+      "image": "https://img.freepik.com/premium-photo/handsome-male-model-leather-jacket-sitting-chair_1208970-15314.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 5,
+      "stock": "no",
+      "category": "Men’s Fashion"
+    },
+    {
+      "name": "Formal Shoes",
+      "price": "Rs. 2000",
+      "image": "https://img.freepik.com/premium-photo/professional-brown-dress-shoes-office-floor-high-quality-image_1160544-57437.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 4,
+      "stock": "yes",
+      "category": "Men’s Fashion"
+    },
+
+    {
+      "name": "Shiny Dress",
+      "price": "Rs. 980",
+      "image": "/public/images/dresses/shiny.jpg",
+      "rating": 4,
+      "stock": "no",
+      "category": "Women’s Fashion"
+    },
+    {
+      "name": "White Dress",
+      "price": "Rs. 1350",
+      "image": "/public/images/dresses/white.avif",
+      "rating": 3,
+      "stock": "yes",
+      "category": "Women’s Fashion"
+    },
+    {
+      "name": "Long Dress",
+      "price": "Rs. 1460",
+      "image": "/public/images/dresses/long.avif",
+      "rating": 4,
+      "stock": "yes",
+      "category": "Women’s Fashion"
+    },
+    {
+      "name": "Colorful Dress",
+      "price": "Rs. 1580",
+      "image": "/public/images/dresses/colorful.avif",
+      "rating": 5,
+      "stock": "yes",
+      "category": "Women’s Fashion"
+    },
+    {
+      "name": "White Dress",
+      "price": "Rs. 1200",
+      "image": "/public/images/dresses/shirt.avif",
+      "rating": 4,
+      "stock": "yes",
+      "category": "Women’s Fashion"
+    },
+
+    {
+      "name": "Elegant Necklace",
+      "price": "Rs. 12000",
+      "image": "https://img.freepik.com/premium-photo/shows-closeup-woman-wearing-gold-necklace-with-diamonds-pearls_1290227-645.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 5,
+      "stock": "yes",
+      "category": "Women Accessories"
+    },
+    {
+      "name": "Stylish Handbag",
+      "price": "Rs. 10000",
+      "image": "https://img.freepik.com/premium-photo/white-leather-handbag-with-cartoon-character-pendant_774065-1485.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 4,
+      "stock": "yes",
+      "category": "Women Accessories"
+    },
+    {
+      "name": "Fabulous Earrings",
+      "price": "Rs. 80",
+      "image": "https://img.freepik.com/premium-photo/beautiful-girl-wears-chic-earrings_199620-1629.jpg?ga=GA1.1.448448890.1721050418&semt=sph",
+      "rating": 4,
+      "stock": "yes",
+      "category": "Women Accessories"
+    },
+    {
+      "name": "Trendy Sunglasses",
+      "price": "Rs. 950",
+      "image": "https://img.freepik.com/free-photo/travel-concept-close-up-portrait-young-beautiful-attractive-redhair-girl-wtih-trendy-hat-sunglass-smiling-blue-pastel-background-copy-space_1258-850.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 5,
+      "stock": "no",
+      "category": "Women Accessories"
+    },
+    {
+      "name": "Charming Bracelet",
+      "price": "Rs. 600",
+      "image": "https://img.freepik.com/premium-photo/accessories-necklace-bracelet-jewelry_53876-240369.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 3,
+      "stock": "yes",
+      "category": "Women Accessories"
+    },
+
+    {
+      "name": "Stylish Sunglasses",
+      "price": "Rs. 850",
+      "image": "https://img.freepik.com/free-photo/portrait-manly-handsome-stylish-bearded-man-brown_285396-4755.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 4,
+      "stock": "yes",
+      "category": "Men Accessories"
+    },
+    {
+      "name": "Elegant Watch",
+      "price": "Rs. 3000",
+      "image": "https://img.freepik.com/free-photo/fashion-portrait-young-businessman-handsome-model-man-casual-cloth-suit-with-accessories-hands_158538-9456.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 5,
+      "stock": "yes",
+      "category": "Men Accessories"
+    },
+    {
+      "name": "Leather Belt",
+      "price": "Rs. 700",
+      "image": "https://img.freepik.com/premium-photo/leather-brown-belt_144962-3329.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 4,
+      "stock": "yes",
+      "category": "Men Accessories"
+    },
+    {
+      "name": "Formal Tie",
+      "price": "Rs. 500",
+      "image": "https://img.freepik.com/free-photo/black-bow-tie-psd-formal-wear-close-up_53876-102189.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 3,
+      "stock": "no",
+      "category": "Men Accessories"
+    },
+    {
+      "name": "Classic Cufflinks",
+      "price": "Rs. 900",
+      "image": "https://img.freepik.com/free-photo/beautiful-stylish-groom-s-cufflinks-shirt_8353-645.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 4,
+      "stock": "yes",
+      "category": "Men Accessories"
+    },
+
+    {
+      "name": "Discounted Scarf",
+      "price": "Rs. 500",
+      "image": "https://img.freepik.com/premium-psd/scarf-with-beautiful-pattern-mockup_23-2151351515.jpg?ga=GA1.1.448448890.1721050418&semt=sph",
+      "rating": 3,
+      "stock": "yes",
+      "category": "Discount Deals"
+    },
+    {
+      "name": "Sale T-Shirt",
+      "price": "Rs. 400",
+      "image": "https://img.freepik.com/free-photo/portrait-pretty-girl-with-long-curly-hair-tail-talking-phone-blue-background-studio-she-wears-white-t-shirt-blue-headphones-shoulders_197531-873.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 4,
+      "stock": "yes",
+      "category": "Discount Deals"
+    },
+    {
+      "name": "Clearance Shorts",
+      "price": "Rs. 600",
+      "image": "https://img.freepik.com/free-photo/portrait-blonde-urban-female-sunglasses-wall-brick_613910-8947.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 3,
+      "stock": "yes",
+      "category": "Discount Deals"
+    },
+    {
+      "name": "Bargain Sneakers",
+      "price": "Rs. 1200",
+      "image": "https://img.freepik.com/premium-photo/new-unbranded-running-shoe-sneaker-trainer-isolated-white-background_116317-16563.jpg?ga=GA1.1.448448890.1721050418&semt=sph",
+      "rating": 4,
+      "stock": "no",
+      "category": "Discount Deals"
+    },
+    {
+      "name": "Seasonal Hat",
+      "price": "Rs. 350",
+      "image": "https://img.freepik.com/free-photo/beautiful-young-woman-with-hat-her-head-looking-camera_23-2148130269.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+      "rating": 4,
+      "stock": "yes",
+      "category": "Discount Deals"
+    }
+  ]
+}
