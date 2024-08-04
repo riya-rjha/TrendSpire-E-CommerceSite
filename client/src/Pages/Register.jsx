@@ -20,18 +20,36 @@ const Register = () => {
           withCredentials: true,
         }
       );
-      enqueueSnackbar("User registered, now Login", {
-        variant: "success",
-        anchorOrigin: {
-          vertical: "top",
-          horizontal: "right",
-        },
-        autoHideDuration: 3000,
-      });
-      navigate("/user/login");
+      try {
+        await axios.post(
+          `${import.meta.env.VITE_baseURL}/user/login`,
+          { username, email, password },
+          {
+            withCredentials: true,
+          }
+        );
+        navigate('/');
+        enqueueSnackbar("Logged in & Registered", {
+          variant: "success",
+          anchorOrigin: {
+            vertical: "top",
+            horizontal: "right",
+          },
+          autoHideDuration: 3000,
+        });
+      } catch (error) {
+        enqueueSnackbar("Registered but could not login", {
+          variant: "error",
+          anchorOrigin: {
+            vertical: "top",
+            horizontal: "right",
+          },
+          autoHideDuration: 3000,
+        });
+      }
     } catch (error) {
       console.log(error.message);
-      enqueueSnackbar("Check credentials again", {
+      enqueueSnackbar("User is already registered", {
         variant: "error",
         anchorOrigin: {
           vertical: "top",
@@ -39,7 +57,6 @@ const Register = () => {
         },
         autoHideDuration: 3000,
       });
-      navigate("/user/login");
     }
   };
 
