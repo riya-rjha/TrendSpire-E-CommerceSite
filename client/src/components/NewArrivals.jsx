@@ -49,10 +49,10 @@ const NewArrivals = () => {
         {displayedProducts.map((product, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105"
+            className="bg-white rounded-lg shadow-md overflow-hidden "
           >
             <img
-              className="w-full h-48 object-cover"
+              className="w-full h-48 object-cover transition-transform duration-300 ease-in-out transform hover:scale-110"
               src={product.image}
               alt={product.name}
             />

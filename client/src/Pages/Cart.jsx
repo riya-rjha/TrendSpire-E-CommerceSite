@@ -40,7 +40,7 @@ const Cart = () => {
                   <input
                     type="text"
                     value="1"
-                    className="w-8 text-center border border-gray-300 rounded-md"
+                    className="w-8 text-center border border-gray-300 p-[3px]"
                     readOnly
                   />
                   <button className="bg-emerald-600 text-white px-2 py-1 rounded-r-md">
@@ -77,7 +77,7 @@ const Cart = () => {
                   <input
                     type="text"
                     value="1"
-                    className="w-8 text-center border border-gray-300 rounded-md"
+                    className="w-8 text-center border border-gray-300 p-[3px]"
                     readOnly
                   />
                   <button className="bg-emerald-600 text-white px-2 py-1 rounded-r-md">

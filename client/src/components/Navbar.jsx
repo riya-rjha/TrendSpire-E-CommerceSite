@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { FaShoppingCart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa6";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +11,7 @@ const Navbar = () => {
   if (username !== null) {
     username =
       username.charAt(0).toUpperCase() + username.slice(1).toLowerCase();
-  }else{
+  } else {
     username = "User";
   }
 
@@ -70,12 +72,17 @@ const Navbar = () => {
         </a>
 
         <div className="flex flex-col md:flex-row gap-4 mt-4 md:mt-0">
-          <Link
-            to="/user/register"
-            className="bg-teal-700 px-4 py-2 rounded-lg text-base font-bold hover:bg-teal-600 transition-colors"
-          >
-            Register
-          </Link>
+          {username !== "User" ? (
+            <></>
+          ) : (
+            <Link
+              to="/user/register"
+              className="bg-teal-700 px-4 py-2 rounded-lg text-base font-bold hover:bg-teal-600 transition-colors"
+            >
+              Register
+            </Link>
+          )}
+
           <Link
             to="/user/login"
             className="text-zinc-300 px-4 py-2 rounded-lg text-base bg-gray-800 hover:bg-gray-700 hover:text-white transition-colors font-bold"
@@ -88,9 +95,11 @@ const Navbar = () => {
               <p>{username}</p>
             </div>
           ) : (
-            <div className="hidden"></div>
+            <></>
           )}
         </div>
+        <FaShoppingCart className="text-3xl" />
+        <FaHeart className="text-3xl" />
       </div>
     </nav>
   );
