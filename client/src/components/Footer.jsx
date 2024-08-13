@@ -46,7 +46,12 @@ const Footer = () => {
                   Login / Register
                 </li>
               </Link>
-              <li className="mb-2 cursor-pointer hover:text-teal-300">Cart</li>
+              <a href="#NewArrivals">
+                {" "}
+                <li className="mb-2 cursor-pointer hover:text-teal-300">
+                  Cart
+                </li>
+              </a>
               <li className="mb-2 cursor-pointer hover:text-teal-300">
                 Wishlist
               </li>
@@ -57,14 +62,10 @@ const Footer = () => {
           <div className="flex flex-col">
             <h2 className="text-2xl font-semibold mb-4">Quick Links</h2>
             <ul className="text-base">
-              <li className="mb-2 cursor-pointer hover:text-teal-300">
-                Privacy Policy
-              </li>
-              <li className="mb-2 cursor-pointer hover:text-teal-300">
-                Terms Of Use
-              </li>
-              <li className="mb-2 cursor-pointer hover:text-teal-300">FAQ</li>
-              <li className="cursor-pointer hover:text-teal-300">Contact</li>
+              <li className="mb-2  hover:text-teal-300">Privacy Policy</li>
+              <li className="mb-2  hover:text-teal-300">Terms Of Use</li>
+              <li className="mb-2  hover:text-teal-300">FAQ</li>
+              <li className=" hover:text-teal-300">Contact</li>
             </ul>
             <div className="flex flex-col mt-6">
               <h2 className="text-2xl font-semibold mb-4">Download App</h2>

@@ -50,7 +50,10 @@ userRouter.post("/login", async (req, res) => {
       }
     );
     res.cookie("jwtToken", signInJWT);
-    return res.json("Successfully logged in");
+    return res.json({
+      message: "Successfully logged in",
+      username: ifUserExists.username,
+    });
   } catch (error) {
     console.log(error.message);
     return res.json("User could not be logged in");

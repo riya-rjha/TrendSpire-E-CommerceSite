@@ -9,6 +9,8 @@ const Login = () => {
 
   const navigate = useNavigate();
 
+  const jwtToken = document.cookie.slice(9);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -17,13 +19,16 @@ const Login = () => {
       : { username: data, password };
 
     try {
-      await axios.post(
+      const response = await axios.post(
         `${import.meta.env.VITE_baseURL}/user/login`,
         loginData,
         {
           withCredentials: true,
         }
       );
+
+      localStorage.setItem("username", response.data.username);
+      localStorage.setItem("jwtToken", jwtToken);
 
       enqueueSnackbar("Logged in successfully", {
         variant: "success",
