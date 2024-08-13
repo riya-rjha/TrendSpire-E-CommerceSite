@@ -26,12 +26,12 @@ const Navbar = () => {
 
   return (
     <nav className="bg-teal-900 text-white h-16 md:h-20 flex flex-col md:flex-row items-center justify-between px-6 md:px-12 sticky top-0 z-[111] backdrop-blur-md backdrop-brightness-75 bg-teal-900/60">
-      <Link to="/" onClick={reload}>
+      <a href="/" onClick={reload}>
         {" "}
         <div className="text-2xl font-bold mb-4 md:mb-0 hidden md:block">
           TRENDSPIRE
         </div>
-      </Link>
+      </a>
 
       <button
         className={`md:hidden text-3xl focus:outline-none my-3 ${

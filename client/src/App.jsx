@@ -9,6 +9,7 @@ import Chatbot from "./Pages/Chatbot";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
+import Cart from "./Pages/Cart";
 
 const App = () => {
   const location = useLocation();
@@ -51,6 +52,15 @@ const App = () => {
         ></Route>
         <Route path="/user/register" element={<Register />}></Route>
         <Route path="/user/login" element={<Login />}></Route>
+        <Route
+          path="/cart"
+          element={
+            <>
+              <Cart />
+              <Footer/>
+            </>
+          }
+        ></Route>
       </Routes>
     </div>
   );

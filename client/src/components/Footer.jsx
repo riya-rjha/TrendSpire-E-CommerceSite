@@ -46,12 +46,12 @@ const Footer = () => {
                   Login / Register
                 </li>
               </Link>
-              <a href="#NewArrivals">
+              <Link to="/cart">
                 {" "}
                 <li className="mb-2 cursor-pointer hover:text-teal-300">
                   Cart
                 </li>
-              </a>
+              </Link>
               <li className="mb-2 cursor-pointer hover:text-teal-300">
                 Wishlist
               </li>
