@@ -45,61 +45,55 @@ const Navbar = () => {
       </button>
 
       <div
-        className={`flex flex-col md:flex-row md:gap-12 text-base ${
+        className={`flex flex-col gap-2 md:flex-row md:gap-12 text-base ${
           isMenuOpen ? "menu-enter" : "menu-exit hidden md:flex"
         } md:translate-x-0 md:items-center fixed md:relative top-[60px] left-0 md:top-auto md:left-auto bg-teal-900 md:bg-transparent w-full md:w-auto h-screen md:h-auto z-50 transition-all duration-300`}
       >
-        <a href="#" className="px-4 py-2 hover:text-teal-300 transition-colors">
+        <Link
+          to="/"
+          className="px-4 mt-3 md:mt-0 hover:text-teal-300 transition-colors"
+        >
           Home
-        </a>
+        </Link>
         <a
           href="#About"
-          className="px-4 py-2 hover:text-teal-300 transition-colors"
+          className="px-4  hover:text-teal-300 transition-colors"
         >
           About Us
         </a>
         <a
           href="#NewArrivals"
-          className="px-4 py-2 hover:text-teal-300 transition-colors"
+          className="px-4  hover:text-teal-300 transition-colors"
         >
           New Arrivals
         </a>
         <a
           href="#Testimonials"
-          className="px-4 py-2 hover:text-teal-300 transition-colors"
+          className="px-4  hover:text-teal-300 transition-colors"
         >
           Testimonials
         </a>
 
         <div className="flex flex-col md:flex-row gap-4 mt-4 md:mt-0">
-          {username !== "User" ? (
-            <></>
-          ) : (
-            <Link
-              to="/user/register"
-              className="bg-teal-700 px-4 py-2 rounded-lg text-base font-bold hover:bg-teal-600 transition-colors"
-            >
-              Register
-            </Link>
-          )}
-
           <Link
             to="/user/login"
-            className="text-zinc-300 px-4 py-2 rounded-lg text-base bg-gray-800 hover:bg-gray-700 hover:text-white transition-colors font-bold"
+            className="text-zinc-300 px-4 py-2 md:rounded-lg text-base md:bg-gray-800 md:hover:bg-gray-700 hover:text-white transition-colors font-bold -mt-6 md:mt-0"
             onClick={handleLogout}
           >
             {username !== "User" ? "Logout" : "Login"}
           </Link>
           {username !== undefined ? (
-            <div className="bg-teal-700 px-4 py-2 rounded-lg text-base font-bold transition-colors">
+            <div className="md:bg-teal-700 px-4 py-2 -mt-6 md:mt-0 md:rounded-lg text-base font-bold transition-colors">
               <p>{username}</p>
             </div>
           ) : (
             <></>
           )}
         </div>
-        <FaShoppingCart className="text-3xl" />
-        <FaHeart className="text-3xl" />
+        <div className="-mt-1 ml-3 md:mt-0 md:ml-0 flex gap-6">
+          <FaShoppingCart className="text-3xl cursor-pointer" />
+          <FaHeart className="text-3xl cursor-pointer" />
+        </div>
       </div>
     </nav>
   );
