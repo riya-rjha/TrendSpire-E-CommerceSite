@@ -91,8 +91,8 @@ const Navbar = () => {
           )}
         </div>
         <div className="-mt-1 ml-3 md:mt-0 md:ml-0 flex gap-6">
-          <FaShoppingCart className="text-3xl cursor-pointer" />
-          <FaHeart className="text-3xl cursor-pointer" />
+          <FaShoppingCart className="text-3xl cursor-pointer transition-all delay-75 hover:text-blue-500" />
+          <FaHeart className="text-3xl cursor-pointer transition-all delay-75 hover:text-red-500" />
         </div>
       </div>
     </nav>

@@ -25,7 +25,7 @@ const Footer = () => {
           <div className="flex flex-col mb-12 md:mb-0">
             <h2 className="text-2xl font-semibold mb-4">Support</h2>
             <p className="text-base mb-2 cursor-default hover:text-teal-300">
-              111 Bijoy Sarani, Dhaka, DH 1515, Bangladesh
+              111 Bowenpally Road, Secunderabad <br/> Hyderabad
             </p>
             <p className="text-base mb-2 cursor-default hover:text-teal-300">
               exclusive@gmail.com

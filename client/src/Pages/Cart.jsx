@@ -34,13 +34,13 @@ const Cart = () => {
               <div className="flex flex-col items-end">
                 <p className="text-xl font-semibold text-emerald-700">$50.00</p>
                 <div className="flex items-center mt-2">
-                  <button className="bg-emerald-600 text-white px-2 py-1 rounded-l-md">
+                  <button className="bg-emerald-600  text-white px-2 py-1 rounded-l-md">
                     -
                   </button>
                   <input
                     type="text"
                     value="1"
-                    className="w-8 text-center border border-gray-300 p-[3px]"
+                    className="w-8 text-center outline-none border border-gray-300 p-[3px]"
                     readOnly
                   />
                   <button className="bg-emerald-600 text-white px-2 py-1 rounded-r-md">
@@ -77,7 +77,7 @@ const Cart = () => {
                   <input
                     type="text"
                     value="1"
-                    className="w-8 text-center border border-gray-300 p-[3px]"
+                    className="w-8 outline-none text-center border border-gray-300 p-[3px]"
                     readOnly
                   />
                   <button className="bg-emerald-600 text-white px-2 py-1 rounded-r-md">
