@@ -11,27 +11,24 @@ cartRouter.post("/", async (req, res) => {
 
     const newProduct = { username, name, price, image, category };
 
-    let cart = await cartModel.findOne({ username });
-
-    if (cart) {
-      cart.products.push(newProduct);
-    } else {
-      cart = new cartModel({
-        username,
-        products: [newProduct],
-      });
-    }
+    let cart = new cartModel({
+      username,
+      products: [newProduct],
+    });
 
     await cart.save();
 
-    // [
-    //     {
-    //       name: 'Suit',
-    //       price: 231.31,
-    //       image: 'https://img.freepik.com/premium-photo/beautiful-stylish-woman-sun-glasses-color-wall_534373-20958.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid',
-    //       category: 'Women'
-    //     }
-    //   ]
+    /*
+    {
+      "product": {
+          "username": "66af7badd6c9a125ae00e48e",
+          "name": "jknkwd",
+          "price": 231,
+          "image": "https://img.freepik.com/premium-photo/beautiful-stylish-woman-sun-glasses-color-wall_534373-20958.jpg?ga=GA1.1.448448890.1721050418&semt=ais_hybrid",
+          "category": "woen"
+      }
+    }
+    */
 
     return res.status(201).json({ product: newProduct });
   } catch (error) {
