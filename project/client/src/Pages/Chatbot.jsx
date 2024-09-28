@@ -84,7 +84,7 @@ const Chatbot = () => {
 
           {/* Chat Container */}
           <div className=" flex-1 flex flex-col">
-            <div className=" flex-1 overflow-auto mb-4">
+            <div className=" flex-1 overflow-y-auto mb-4 max-h-[60vh]">
               {messages.map((message, index) => (
                 <div key={index} className={`message ${message.role}`}>
                   {error ? (
@@ -101,7 +101,7 @@ const Chatbot = () => {
                             {capitalize(message.role)}
                           </span>
                         }
-                        : {message.text}
+                        : {message.text.replace(/\*/g, '')}
                       </p>
                     </div>
                   )}
