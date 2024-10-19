@@ -20,7 +20,6 @@ const cartSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "user",
     required: true,
-    unique: true,
   },
   products: [productCartSchema],
 });
