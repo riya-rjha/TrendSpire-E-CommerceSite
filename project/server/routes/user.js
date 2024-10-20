@@ -56,7 +56,7 @@ userRouter.post("/login", async (req, res) => {
     });
   } catch (error) {
     console.log(error.message);
-    return res.json("User could not be logged in");
+    // return res.json("User could not be logged in");
   }
 });
 

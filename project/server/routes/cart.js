@@ -7,9 +7,9 @@ cartRouter.post("/", async (req, res) => {
   //   const token = req.cookies.jwtToken;
   //   if (!token) return res.status(401).json({ error: "Not authenticated" });
   try {
-    const { userID, name, price, image, category } = req.body;
+    const { userID, name, price, image, category, discount } = req.body;
 
-    const newProduct = { userID, name, price, image, category };
+    const newProduct = { userID, name, price, image, category, discount };
 
     let cart = await cartModel.findOne({ userID });
     if (!cart) {

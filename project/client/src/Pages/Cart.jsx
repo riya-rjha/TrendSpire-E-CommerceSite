@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   let username = localStorage.getItem("username");
   const [products, setProducts] = useState([]);
+  const [calSum, setCalcSum] = useState(0);
+  const [discount, setDiscount] = useState(0);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const getProductCart = async () => {
@@ -13,12 +16,53 @@ const Cart = () => {
       );
       const productsInCart = getCartForUser.data.products;
       setProducts(productsInCart);
+      // console.log(products);
     };
     getProductCart();
     // console.log(products[0].name);
-
-    const calculateSum = () => {};
   }, []);
+
+  useEffect(() => {
+    const calculateSum = () => {
+      let sum = 0;
+      products.map((prod) => {
+        sum += prod.price;
+        // console.log(sum);
+      });
+      setCalcSum(sum);
+    };
+    calculateSum();
+  }, [products]);
+
+  useEffect(() => {
+    let disc = 0;
+    products.map((prod) => {
+      disc += prod.discount;
+    });
+    setDiscount(disc);
+  }, [products]);
+
+  const applyDiscount = () => {
+    // console.log(discount + disc);
+    if(count != 0){
+      return;
+    }
+    let currSum = calSum;
+    let costAfterDiscount = (discount / 100) * currSum;
+    let finalSum = (currSum - costAfterDiscount).toFixed(2);
+    setCalcSum(finalSum);
+    setCount(count+1);
+  };
+
+  const removeDiscount = () => {
+    let sum = 0;
+    products.map((prod) => {
+      sum += prod.price;
+      // console.log(sum);
+    });
+    setCalcSum(sum);
+    setCount(0);
+  }
 
   return (
     <div className="bg-green-50 min-h-screen p-10">
@@ -26,8 +70,8 @@ const Cart = () => {
         <div className="flex-1">
           <h1 className="text-4xl font-bold text-emerald-800 mb-4">
             Shopping Cart{" "}
-            <span className="italic font-bold capitalize underline text-purple-800">
-              for RRJ
+            <span className="italic font-black capitalize underline text-purple-800">
+              Of {username.toLowerCase()}
             </span>
           </h1>
           <p className="text-lg mb-8 text-gray-700">
@@ -93,21 +137,32 @@ const Cart = () => {
               <div className="flex justify-between mt-2 border-t pt-2">
                 <p className="text-lg font-semibold text-emerald-800">Total</p>
                 <p className="text-lg font-semibold text-emerald-800">
-                  $100.00
+                  ${calSum}
                 </p>
               </div>
-              <button className="bg-emerald-600 text-white w-full py-2 rounded-md mt-4">
-                Apply 30% Discount
-              </button>
-              <button className="bg-emerald-700 text-white w-full py-2 rounded-md mt-2">
-                Apply
-              </button>
+              {count === 1 ? (
+                <button
+                  onClick={removeDiscount}
+                  className="bg-red-600 text-white w-full py-2 rounded-md mt-4"
+                >
+                  Remove {discount}% Discount
+                </button>
+              ) : (
+                <button
+                  onClick={applyDiscount}
+                  className="bg-emerald-600 text-white w-full py-2 rounded-md mt-4"
+                >
+                  Apply {discount}% Discount
+                </button>
+              )}
             </div>
             <div className="bg-emerald-50 p-4 rounded-lg shadow-md">
               <p className="text-lg font-semibold text-emerald-800">
                 Cart Total
               </p>
-              <p className="text-xl font-bold text-emerald-700 mt-2">$35.00</p>
+              <p className="text-xl font-bold text-emerald-700 mt-2">
+                ${calSum}
+              </p>
               <button className="bg-emerald-600 text-white w-full py-2 rounded-md mt-4">
                 Proceed to Order
               </button>

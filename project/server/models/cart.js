@@ -13,6 +13,9 @@ const productCartSchema = new Schema({
   category: {
     type: String,
   },
+  discount: {
+    type: Number,
+  },
 });
 
 const cartSchema = new Schema({
