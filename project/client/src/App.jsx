@@ -10,8 +10,10 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import Cart from "./Pages/Cart";
+import ThankYouPage from "./Pages/ThankyouPage";
 
 const App = () => {
+  const username = localStorage.getItem("username");
   const location = useLocation();
   const pathName = location.pathname;
 
@@ -42,6 +44,9 @@ const App = () => {
             </>
           }
         />
+
+        <Route path="/order" element={<ThankYouPage/>} />
+
         <Route
           path="/chat"
           element={
@@ -56,8 +61,8 @@ const App = () => {
           path="/cart"
           element={
             <>
-              <Cart />
-              <Footer/>
+              {username !== "User" ? <Cart /> : <></>}
+              <Footer />
             </>
           }
         ></Route>

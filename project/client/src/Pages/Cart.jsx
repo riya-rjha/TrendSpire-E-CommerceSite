@@ -44,14 +44,14 @@ const Cart = () => {
 
   const applyDiscount = () => {
     // console.log(discount + disc);
-    if(count != 0){
+    if (count != 0) {
       return;
     }
     let currSum = calSum;
     let costAfterDiscount = (discount / 100) * currSum;
     let finalSum = (currSum - costAfterDiscount).toFixed(2);
     setCalcSum(finalSum);
-    setCount(count+1);
+    setCount(count + 1);
   };
 
   const removeDiscount = () => {
@@ -62,7 +62,7 @@ const Cart = () => {
     });
     setCalcSum(sum);
     setCount(0);
-  }
+  };
 
   return (
     <div className="bg-green-50 min-h-screen p-10">
@@ -141,12 +141,17 @@ const Cart = () => {
                 </p>
               </div>
               {count === 1 ? (
-                <button
-                  onClick={removeDiscount}
-                  className="bg-red-600 text-white w-full py-2 rounded-md mt-4"
-                >
-                  Remove {discount}% Discount
-                </button>
+                <>
+                  <p className="font-semibold mt-2 p-2 bg-slate-200 rounded-md">
+                  Only click below if you're Jr. Ambani 🤭
+                  </p>
+                  <button
+                    onClick={removeDiscount}
+                    className="bg-red-600 text-white w-full py-2 rounded-md mt-4"
+                  >
+                    Remove {discount}% Discount
+                  </button>
+                </>
               ) : (
                 <button
                   onClick={applyDiscount}
