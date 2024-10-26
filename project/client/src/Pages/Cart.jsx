@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 const Cart = () => {
   let username = localStorage.getItem("username");
@@ -8,18 +7,17 @@ const Cart = () => {
   const [calSum, setCalcSum] = useState(0);
   const [discount, setDiscount] = useState(0);
   const [count, setCount] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     const getProductCart = async () => {
       const getCartForUser = await axios.get(
-        `${import.meta.env.VITE_baseURL}/cart/`
+        `${import.meta.env.VITE_baseURL}/cart/`,
+        { params: { userID: localStorage.getItem("userID") } }
       );
-      const productsInCart = getCartForUser.data.products;
-      setProducts(productsInCart);
-      // console.log(products);
+      setProducts(getCartForUser.data.products);
     };
     getProductCart();
-    // console.log(products[0].name);
   }, []);
 
   useEffect(() => {
@@ -36,10 +34,15 @@ const Cart = () => {
 
   useEffect(() => {
     let disc = 0;
+    let quant = 0;
     products.map((prod) => {
       disc += prod.discount;
     });
+    products.map((prod) => {
+      quant = prod.quantity;
+    });
     setDiscount(disc);
+    setQuantity(quant);
   }, [products]);
 
   const applyDiscount = () => {
@@ -64,6 +67,10 @@ const Cart = () => {
     setCount(0);
   };
 
+  const increaseQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+
   return (
     <div className="bg-green-50 min-h-screen p-10">
       <div className="flex flex-col lg:flex-row gap-8">
@@ -86,16 +93,21 @@ const Cart = () => {
                   className="w-24 h-24 object-cover rounded-lg"
                 />
                 <div className="flex-1">
-                  <h2 className="text-xl font-semibold text-emerald-700">
+                  <h2 className="text-2xl font-semibold text-emerald-700">
                     {product.name}
                   </h2>
-                  <p className="text-gray-600">Category: {product.category}</p>
-                  <div className="flex gap-2 mt-2">
-                    <span className="w-6 h-6 bg-red-500 rounded-full"></span>
-                    <span className="w-6 h-6 bg-black rounded-full"></span>
-                    <span className="w-6 h-6 bg-green-500 rounded-full"></span>
-                    <span className="w-6 h-6 bg-white border border-black rounded-full"></span>
-                  </div>
+                  <p className="text-black text-lg font-semibold">
+                    Category:{" "}
+                    <span className="text-green-900 font-bold">
+                      {product.category}
+                    </span>
+                  </p>
+                  <p className="text-black text-lg font-semibold mt-1">
+                    Discount:{" "}
+                    <span className="text-green-900 font-bold">
+                      {product.discount}%
+                    </span>
+                  </p>
                 </div>
                 <div className="flex flex-col items-end">
                   <p className="text-xl font-semibold text-emerald-700">
@@ -107,11 +119,14 @@ const Cart = () => {
                     </button>
                     <input
                       type="text"
-                      value="1"
+                      value={quantity}
                       className="w-8 text-center outline-none border border-gray-300 p-[3px]"
                       readOnly
                     />
-                    <button className="bg-emerald-600 text-white px-2 py-1 rounded-r-md">
+                    <button
+                      onClick={increaseQuantity}
+                      className="bg-emerald-600 text-white px-2 py-1 rounded-r-md"
+                    >
                       +
                     </button>
                   </div>
@@ -143,7 +158,7 @@ const Cart = () => {
               {count === 1 ? (
                 <>
                   <p className="font-semibold mt-2 p-2 bg-slate-200 rounded-md">
-                  Only click below if you're Jr. Ambani 🤭
+                    Dare to click only if you're Jr. Ambani 🤭
                   </p>
                   <button
                     onClick={removeDiscount}

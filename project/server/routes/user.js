@@ -46,13 +46,14 @@ userRouter.post("/login", async (req, res) => {
       { id: ifUserExists._id },
       process.env.SECRET_KEY,
       {
-        expiresIn: "1h",
+        expiresIn: "24h",
       }
     );
     res.cookie("jwtToken", signInJWT);
     return res.json({
       message: "Successfully logged in",
       username: ifUserExists.username,
+      userID: ifUserExists._id.toString()
     });
   } catch (error) {
     console.log(error.message);

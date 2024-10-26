@@ -29,6 +29,7 @@ const Login = () => {
       );
 
       localStorage.setItem("username", response.data.username);
+      localStorage.setItem("userID", response.data.userID);
       localStorage.setItem("jwtToken", jwtToken);
 
       enqueueSnackbar("Logged in successfully", {

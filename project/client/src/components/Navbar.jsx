@@ -22,6 +22,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     localStorage.removeItem("username");
     localStorage.removeItem("jwtToken");
+    localStorage.removeItem("userID");
     await axios.post(`${import.meta.env.VITE_baseURL}/user/logout`);
     username = "User";
   };

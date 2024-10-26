@@ -4,13 +4,21 @@ import { cartModel } from "../models/cart.js";
 const cartRouter = express.Router();
 
 cartRouter.post("/", async (req, res) => {
-  //   const token = req.cookies.jwtToken;
-  //   if (!token) return res.status(401).json({ error: "Not authenticated" });
+  // const token = req.cookies.jwtToken;
+  // if (!token) return res.status(401).json({ error: "Not authenticated" });
   try {
-    const { userID, name, price, image, category, discount } = req.body;
+    const { userID, name, price, image, category, discount, quantity } =
+      req.body;
 
-    const newProduct = { userID, name, price, image, category, discount };
-
+    const newProduct = {
+      userID,
+      name,
+      price,
+      image,
+      category,
+      discount,
+      quantity,
+    };
     let cart = await cartModel.findOne({ userID });
     if (!cart) {
       cart = new cartModel({
@@ -20,9 +28,7 @@ cartRouter.post("/", async (req, res) => {
     } else {
       cart.products.push(newProduct);
     }
-
     await cart.save();
-
     return res.status(201).json({ cart });
   } catch (error) {
     console.log(error.message);
@@ -31,15 +37,38 @@ cartRouter.post("/", async (req, res) => {
 });
 
 cartRouter.get("/", async (req, res) => {
+  const { userID } = req.query;
+  // console.log(userID);
   try {
-    const productCart = await cartModel.find({});
-    const cartDetails = productCart[0];
-    console.log(cartDetails);
-    return res.status(200).json(cartDetails);
+    const productCart = await cartModel.findOne({ userID });
+    if (!productCart) {
+      return res.status(404).json({ message: "Cart for the user not found" });
+    }
+    return res.status(200).json(productCart);
   } catch (error) {
     console.log(error.message);
     return res.status(404).json({ message: "Cart for the user not found" });
   }
+});
+
+cartRouter.put("/", async (req, res) => {
+  try {
+    const { userID, productID, action } = req.body;
+    const cart = await cartModel.products.findOne({ userID });
+    if (!cart) {
+      return res.status(404).json("Cart not found for specified user!");
+    }
+    const productCart = cart.products.find(
+      (prod) => prod._id.toString() === productID
+    );
+    if (!productCart) {
+      return res.status(404).json("Products not found for specified user!");
+    }
+    if(action === "increment"){
+      
+    }
+    console.log(productCart.quantity);
+  } catch (error) {}
 });
 
 export default cartRouter;
