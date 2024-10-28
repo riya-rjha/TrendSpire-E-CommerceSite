@@ -54,21 +54,27 @@ cartRouter.get("/", async (req, res) => {
 cartRouter.put("/", async (req, res) => {
   try {
     const { userID, productID, action } = req.body;
-    const cart = await cartModel.products.findOne({ userID });
+    const cart = await cartModel.findOne({ userID });
     if (!cart) {
       return res.status(404).json("Cart not found for specified user!");
     }
-    const productCart = cart.products.find(
+    const prodIndex = cart.products.findIndex(
       (prod) => prod._id.toString() === productID
     );
-    if (!productCart) {
+    if (prodIndex === -1) {
       return res.status(404).json("Products not found for specified user!");
     }
-    if(action === "increment"){
-      
+    if (action === "increment") {
+      cart.products[prodIndex].quantity += 1;
+    } else if (action === "decrement") {
+      cart.products[prodIndex].quantity -= 1;
     }
-    console.log(productCart.quantity);
-  } catch (error) {}
+    await cart.save();
+    return res.status(200).json({ cart });
+  } catch (error) {
+    console.log(error.message);
+    return res.status(500).json({ message: "Internal server error" });
+  }
 });
 
 export default cartRouter;

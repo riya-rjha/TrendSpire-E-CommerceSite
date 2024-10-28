@@ -7,7 +7,6 @@ const Cart = () => {
   const [calSum, setCalcSum] = useState(0);
   const [discount, setDiscount] = useState(0);
   const [count, setCount] = useState(0);
-  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     const getProductCart = async () => {
@@ -23,9 +22,8 @@ const Cart = () => {
   useEffect(() => {
     const calculateSum = () => {
       let sum = 0;
-      products.map((prod) => {
-        sum += prod.price;
-        // console.log(sum);
+      products.forEach((prod) => {
+        sum += prod.price * prod.quantity;
       });
       setCalcSum(sum);
     };
@@ -34,20 +32,14 @@ const Cart = () => {
 
   useEffect(() => {
     let disc = 0;
-    let quant = 0;
-    products.map((prod) => {
+    products.forEach((prod) => {
       disc += prod.discount;
     });
-    products.map((prod) => {
-      quant = prod.quantity;
-    });
     setDiscount(disc);
-    setQuantity(quant);
   }, [products]);
 
   const applyDiscount = () => {
-    // console.log(discount + disc);
-    if (count != 0) {
+    if (count !== 0) {
       return;
     }
     let currSum = calSum;
@@ -59,16 +51,35 @@ const Cart = () => {
 
   const removeDiscount = () => {
     let sum = 0;
-    products.map((prod) => {
-      sum += prod.price;
-      // console.log(sum);
+    products.forEach((prod) => {
+      sum += prod.price * prod.quantity;
     });
     setCalcSum(sum);
     setCount(0);
   };
 
-  const increaseQuantity = () => {
-    setQuantity(quantity + 1);
+  const updateQuantity = (product, action) => {
+    const updatedProducts = products.map((prod) => {
+      if (prod._id === product._id) {
+        const newQuantity = action === "increment" ? prod.quantity + 1 : prod.quantity - 1;
+        return { ...prod, quantity: newQuantity }; 
+      }
+      return prod;
+    });
+    setProducts(updatedProducts);
+    setQuantity(product, action);
+  };
+
+  const setQuantity = async (product, action) => {
+    try {
+      await axios.put(`${import.meta.env.VITE_baseURL}/cart/`, {
+        userID: localStorage.getItem("userID"),
+        productID: product._id.toString(),
+        action: action,
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (
@@ -85,7 +96,7 @@ const Cart = () => {
             Here you go! Happy shopping 🎉
           </p>
           {products.map((product) => (
-            <div className="bg-white p-6 rounded-lg shadow-md my-6">
+            <div key={product._id} className="bg-white p-6 rounded-lg shadow-md my-6">
               <div className="flex gap-4 border-b pb-4 mb-4">
                 <img
                   src={product.image}
@@ -114,17 +125,20 @@ const Cart = () => {
                     ${product.price}
                   </p>
                   <div className="flex items-center mt-2">
-                    <button className="bg-emerald-600  text-white px-2 py-1 rounded-l-md">
+                    <button
+                      onClick={() => updateQuantity(product, "decrement")}
+                      className="bg-emerald-600 text-white px-2 py-1 rounded-l-md"
+                    >
                       -
                     </button>
                     <input
                       type="text"
-                      value={quantity}
+                      value={product.quantity}
                       className="w-8 text-center outline-none border border-gray-300 p-[3px]"
                       readOnly
                     />
                     <button
-                      onClick={increaseQuantity}
+                      onClick={() => updateQuantity(product, "increment")}
                       className="bg-emerald-600 text-white px-2 py-1 rounded-r-md"
                     >
                       +
@@ -139,11 +153,9 @@ const Cart = () => {
         <div className="w-full lg:w-1/3">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="flex flex-col mb-4">
-              <p className="text-lg font-semibold text-emerald-800">
-                Price Details
-              </p>
+              <p className="text-lg font-semibold text-emerald-800">Price Details</p>
               {products.map((prod) => (
-                <div className="flex justify-between mt-4">
+                <div key={prod._id} className="flex justify-between mt-4">
                   <p className="text-gray-700">{prod.name}</p>
                   <p className="text-gray-700">${prod.price}</p>
                 </div>
@@ -177,9 +189,7 @@ const Cart = () => {
               )}
             </div>
             <div className="bg-emerald-50 p-4 rounded-lg shadow-md">
-              <p className="text-lg font-semibold text-emerald-800">
-                Cart Total
-              </p>
+              <p className="text-lg font-semibold text-emerald-800">Cart Total</p>
               <p className="text-xl font-bold text-emerald-700 mt-2">
                 ${calSum}
               </p>
