@@ -88,6 +88,9 @@ const NewArrivals = () => {
                 <button className="bg-[#134E4A] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#0f3e3a] focus:outline-none focus:ring-2 focus:ring-[#134E4A] focus:ring-opacity-50 transition duration-300 w-full">
                   Add to Cart
                 </button>
+                <button className="bg-[#134E4A] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#0f3e3a] focus:outline-none focus:ring-2 focus:ring-[#134E4A] focus:ring-opacity-50 transition duration-300 w-full mt-4">
+                  Add to Favourites
+                </button>
               </div>
             </div>
           </div>

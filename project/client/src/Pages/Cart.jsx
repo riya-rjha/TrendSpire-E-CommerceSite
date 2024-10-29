@@ -34,7 +34,9 @@ const Cart = () => {
   useEffect(() => {
     let disc = 0;
     products.forEach((prod) => {
-      disc += prod.discount;
+      if (prod.quantity > 0) {
+        disc += prod.discount * prod.quantity;
+      }
     });
     setDiscount(disc);
   }, [products]);
@@ -99,62 +101,70 @@ const Cart = () => {
           <p className="text-lg mb-8 text-gray-700">
             Here you go! Happy shopping 🎉
           </p>
-          {products.map((product) => (
-            <div
-              key={product._id}
-              className="bg-white p-6 rounded-lg shadow-md my-6"
-            >
-              <div className="flex gap-4 border-b pb-4 mb-4">
-                <img
-                  src={product.image}
-                  alt="Product"
-                  className="w-24 h-24 object-cover rounded-lg"
-                />
-                <div className="flex-1">
-                  <h2 className="text-2xl font-semibold text-emerald-700">
-                    {product.name}
-                  </h2>
-                  <p className="text-black text-lg font-semibold">
-                    Category:{" "}
-                    <span className="text-green-900 font-bold">
-                      {product.category}
-                    </span>
-                  </p>
-                  <p className="text-black text-lg font-semibold mt-1">
-                    Discount:{" "}
-                    <span className="text-green-900 font-bold">
-                      {product.discount}%
-                    </span>
-                  </p>
-                </div>
-                <div className="flex flex-col items-end">
-                  <p className="text-xl font-semibold text-emerald-700">
-                    ${product.price}
-                  </p>
-                  <div className="flex items-center mt-2">
-                    <button
-                      onClick={() => updateQuantity(product, "decrement")}
-                      className="bg-emerald-600 text-white px-2 py-1 rounded-l-md"
-                    >
-                      -
-                    </button>
-                    <input
-                      type="text"
-                      value={product.quantity}
-                      className="w-8 text-center outline-none border border-gray-300 p-[3px]"
-                      readOnly
-                    />
-                    <button
-                      onClick={() => updateQuantity(product, "increment")}
-                      className="bg-emerald-600 text-white px-2 py-1 rounded-r-md"
-                    >
-                      +
-                    </button>
+          <>
+            {products.map((product) => (
+              <>
+                {product.quantity === 0 ? (
+                  <></>
+                ) : (
+                  <div
+                    key={product._id}
+                    className="bg-white p-6 rounded-lg shadow-md my-6"
+                  >
+                    <div className="flex gap-4 border-b pb-4 mb-4">
+                      <img
+                        src={product.image}
+                        alt="Product"
+                        className="w-24 h-24 object-cover rounded-lg"
+                      />
+                      <div className="flex-1">
+                        <h2 className="text-2xl font-semibold text-emerald-700">
+                          {product.name}
+                        </h2>
+                        <p className="text-black text-lg font-semibold">
+                          Category:{" "}
+                          <span className="text-green-900 font-bold">
+                            {product.category}
+                          </span>
+                        </p>
+                        <p className="text-black text-lg font-semibold mt-1">
+                          Discount:{" "}
+                          <span className="text-green-900 font-bold">
+                            {product.discount}%
+                          </span>
+                        </p>
+                      </div>
+                      <div className="flex flex-col items-end">
+                        <p className="text-xl font-semibold text-emerald-700">
+                          ${product.price}
+                        </p>
+                        <div className="flex items-center mt-2">
+                          <button
+                            onClick={() => updateQuantity(product, "decrement")}
+                            className="bg-emerald-600 text-white px-2 py-1 rounded-l-md"
+                          >
+                            -
+                          </button>
+                          <input
+                            type="text"
+                            value={product.quantity}
+                            className="w-8 text-center outline-none border border-gray-300 p-[3px]"
+                            readOnly
+                          />
+                          <button
+                            onClick={() => updateQuantity(product, "increment")}
+                            className="bg-emerald-600 text-white px-2 py-1 rounded-r-md"
+                          >
+                            +
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          ))}
+                )}
+              </>
+            ))}
+          </>
         </div>
 
         <div className="w-full lg:w-1/3">
@@ -206,7 +216,7 @@ const Cart = () => {
               </p>
               <Link to="/order">
                 <button className="bg-emerald-600 text-white w-full py-2 rounded-md mt-4">
-                  Proceed to Order
+                  Place Order
                 </button>
               </Link>
             </div>
