@@ -9,8 +9,8 @@ import Chatbot from "./pages/Chatbot";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Cart from "./pages/Cart";
 import ThankYouPage from "./pages/ThankyouPage";
+import Cart from "./pages/Cart";
 
 const App = () => {
   const username = localStorage.getItem("username");
@@ -45,7 +45,7 @@ const App = () => {
           }
         />
 
-        <Route path="/order" element={<ThankYouPage/>} />
+        <Route path="/order" element={<ThankYouPage />} />
 
         <Route
           path="/chat"

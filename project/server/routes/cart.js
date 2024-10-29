@@ -51,6 +51,12 @@ cartRouter.get("/", async (req, res) => {
   }
 });
 
+const deleteCart = (id) => {
+  cartRouter.delete("/", async (_, __) => {
+    await cartModel.findByIdAndDelete(id);
+  });
+};
+
 cartRouter.put("/", async (req, res) => {
   try {
     const { userID, productID, action } = req.body;
@@ -67,6 +73,9 @@ cartRouter.put("/", async (req, res) => {
     if (action === "increment") {
       cart.products[prodIndex].quantity += 1;
     } else if (action === "decrement") {
+      if (cart.products[prodIndex].quantity == 1) {
+        cart.products.splice(prodIndex, 0);
+      }
       cart.products[prodIndex].quantity -= 1;
     }
     await cart.save();

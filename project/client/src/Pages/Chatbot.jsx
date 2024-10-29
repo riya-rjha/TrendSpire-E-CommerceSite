@@ -39,6 +39,7 @@ const Chatbot = () => {
       ]);
       setError(false);
     } catch (error) {
+      console.log(error.message);
       setError(true);
     } finally {
       setInput(""); // Clear input field after sending
@@ -101,7 +102,7 @@ const Chatbot = () => {
                             {capitalize(message.role)}
                           </span>
                         }
-                        : {message.text.replace(/\*/g, '')}
+                        : {message.text.replace(/\*/g, "")}
                       </p>
                     </div>
                   )}

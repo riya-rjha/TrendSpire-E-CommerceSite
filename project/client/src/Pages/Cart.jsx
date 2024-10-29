@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   let username = localStorage.getItem("username");
@@ -59,13 +60,16 @@ const Cart = () => {
   };
 
   const updateQuantity = (product, action) => {
-    const updatedProducts = products.map((prod) => {
-      if (prod._id === product._id) {
-        const newQuantity = action === "increment" ? prod.quantity + 1 : prod.quantity - 1;
-        return { ...prod, quantity: newQuantity }; 
-      }
-      return prod;
-    });
+    const updatedProducts = products
+      .map((prod) => {
+        if (prod._id === product._id) {
+          const newQuantity =
+            action === "increment" ? prod.quantity + 1 : prod.quantity - 1;
+          return { ...prod, quantity: newQuantity };
+        }
+        return prod;
+      })
+      .filter((prod) => prod.quantity >= 0);
     setProducts(updatedProducts);
     setQuantity(product, action);
   };
@@ -96,7 +100,10 @@ const Cart = () => {
             Here you go! Happy shopping 🎉
           </p>
           {products.map((product) => (
-            <div key={product._id} className="bg-white p-6 rounded-lg shadow-md my-6">
+            <div
+              key={product._id}
+              className="bg-white p-6 rounded-lg shadow-md my-6"
+            >
               <div className="flex gap-4 border-b pb-4 mb-4">
                 <img
                   src={product.image}
@@ -153,7 +160,9 @@ const Cart = () => {
         <div className="w-full lg:w-1/3">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="flex flex-col mb-4">
-              <p className="text-lg font-semibold text-emerald-800">Price Details</p>
+              <p className="text-lg font-semibold text-emerald-800">
+                Price Details
+              </p>
               {products.map((prod) => (
                 <div key={prod._id} className="flex justify-between mt-4">
                   <p className="text-gray-700">{prod.name}</p>
@@ -189,13 +198,17 @@ const Cart = () => {
               )}
             </div>
             <div className="bg-emerald-50 p-4 rounded-lg shadow-md">
-              <p className="text-lg font-semibold text-emerald-800">Cart Total</p>
+              <p className="text-lg font-semibold text-emerald-800">
+                Cart Total
+              </p>
               <p className="text-xl font-bold text-emerald-700 mt-2">
                 ${calSum}
               </p>
-              <button className="bg-emerald-600 text-white w-full py-2 rounded-md mt-4">
-                Proceed to Order
-              </button>
+              <Link to="/order">
+                <button className="bg-emerald-600 text-white w-full py-2 rounded-md mt-4">
+                  Proceed to Order
+                </button>
+              </Link>
             </div>
           </div>
         </div>
