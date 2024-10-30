@@ -103,8 +103,9 @@ const Navbar = () => {
               <FaShoppingCart className="text-3xl cursor-pointer transition-all delay-75 hover:text-blue-500" />
             </Link>
           )}
-
-          <FaHeart className="text-3xl cursor-pointer transition-all delay-75 hover:text-red-500" />
+          <Link to='/fav'>
+            <FaHeart className="text-3xl cursor-pointer transition-all delay-75 hover:text-red-500" />
+          </Link>
         </div>
       </div>
     </nav>

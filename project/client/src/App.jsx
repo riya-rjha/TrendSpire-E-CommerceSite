@@ -11,6 +11,8 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import ThankYouPage from "./pages/ThankyouPage";
 import Cart from "./pages/Cart";
+import Favourites from "./pages/Favourites";
+import FAQs from "./pages/FAQs";
 
 const App = () => {
   const username = localStorage.getItem("username");
@@ -46,6 +48,8 @@ const App = () => {
         />
 
         <Route path="/order" element={<ThankYouPage />} />
+        <Route path="/fav" element={<Favourites />} />
+        <Route path="/faqs" element={<FAQs />} />
 
         <Route
           path="/chat"
