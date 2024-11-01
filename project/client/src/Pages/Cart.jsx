@@ -217,7 +217,9 @@ const Cart = () => {
                 prod.quantity > 0 && (
                   <div key={prod._id} className="flex justify-between mt-2">
                     <p className="text-gray-700">{prod.name}</p>
-                    <p className="text-gray-700">${prod.price * prod.quantity}</p>
+                    <p className="text-gray-700">
+                      ${prod.price * prod.quantity}
+                    </p>
                   </div>
                 )
             )}
