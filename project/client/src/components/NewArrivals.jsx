@@ -31,6 +31,20 @@ const NewArrivals = () => {
     // console.log(addingToCart);
   };
 
+  const addToFavourites = async (product) => {
+    const addingToFavourite = await axios.post(
+      `${import.meta.env.VITE_baseURL}/favs/`,
+      {
+        name: product.name,
+        userID: localStorage.getItem("userID"),
+        price: product.price,
+        image: product.image,
+        discount: product.discount,
+      }
+    );
+    console.log(addingToFavourite);
+  };
+
   return (
     <div
       className="bg-gradient-to-b from-white to-neutral-50 p-4 md:p-8"
@@ -108,7 +122,10 @@ const NewArrivals = () => {
                 >
                   Add to Cart
                 </button>
-                <button className="bg-[#134E4A] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#0f3e3a] focus:outline-none focus:ring-2 focus:ring-[#134E4A] focus:ring-opacity-50 transition duration-300 w-full mt-4">
+                <button
+                  onClick={() => addToFavourites(product)}
+                  className="bg-[#134E4A] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#0f3e3a] focus:outline-none focus:ring-2 focus:ring-[#134E4A] focus:ring-opacity-50 transition duration-300 w-full mt-4"
+                >
                   Add to Favourites
                 </button>
               </div>

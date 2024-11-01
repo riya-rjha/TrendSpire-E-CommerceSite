@@ -20,7 +20,14 @@ favsRouter.post("/", async (req, res) => {
         favourites: [favProd],
       });
     } else {
-      favourite.favourites.push(favProd);
+      const isExistsFavProd = favourite.favourites.find(
+        (fav) => fav.name === name
+      );
+      if (!isExistsFavProd) {
+        favourite.favourites.push(favProd);
+      } else {
+        return res.status(302).json("Product is already favourite");
+      }
     }
     await favourite.save();
     return res.status(201).json({ favourite });

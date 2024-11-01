@@ -11,8 +11,7 @@ const Favourites = () => {
         params: { userID: localStorage.getItem("userID") },
       });
       setFavourites(favs.data.favourites);
-      console.log(favourites);
-      
+      // console.log(favourites);      
     };
 
     getFavourites();

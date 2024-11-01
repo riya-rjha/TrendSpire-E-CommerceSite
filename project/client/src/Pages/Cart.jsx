@@ -162,7 +162,7 @@ const Cart = () => {
                             <input
                               type="text"
                               value={product.quantity}
-                              className="w-10 p-[3px] text-center border border-gray-300"
+                              className="w-10 p-[3px] outline-none text-center border border-gray-300"
                               readOnly
                             />
                             <button
