@@ -4,6 +4,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import userRouter from "./routes/user.js";
 import cartRouter from "./routes/cart.js";
+import favsRouter from "./routes/favs.js";
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(
 
 app.use("/user", userRouter);
 app.use("/cart", cartRouter);
+app.use("/favs", favsRouter);
 
 const connectToDatabase = async () => {
   try {

@@ -51,12 +51,6 @@ cartRouter.get("/", async (req, res) => {
   }
 });
 
-const deleteCart = (id) => {
-  cartRouter.delete("/", async (_, __) => {
-    await cartModel.findByIdAndDelete(id);
-  });
-};
-
 cartRouter.put("/", async (req, res) => {
   try {
     const { userID, productID, action } = req.body;

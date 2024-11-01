@@ -10,9 +10,6 @@ const favSchemaProducts = new Schema({
   image: {
     type: String,
   },
-  category: {
-    type: String,
-  },
   discount: {
     type: Number,
   },
@@ -24,7 +21,7 @@ const favSchema = new Schema({
     ref: "user",
     required: true,
   },
-  favProducts: [favSchemaProducts],
+  favourites: [favSchemaProducts],
 });
 
-export const cartModel = mongoose.model("favs", favSchema);
+export const favsModel = mongoose.model("favs", favSchema);

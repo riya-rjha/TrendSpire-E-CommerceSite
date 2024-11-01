@@ -48,7 +48,7 @@ const App = () => {
         />
 
         <Route path="/order" element={<ThankYouPage />} />
-        <Route path="/fav" element={<Favourites />} />
+        <Route path="/favs" element={<Favourites />} />
         <Route path="/faqs" element={<FAQs />} />
 
         <Route
