@@ -26,7 +26,12 @@ cartRouter.post("/", async (req, res) => {
         products: [newProduct],
       });
     } else {
-      cart.products.push(newProduct);
+      const ifProductExists = cart.products.find((prod) => prod.name === name);
+      if (ifProductExists) {
+        ifProductExists.quantity += 1;
+      } else {
+        cart.products.push(newProduct);
+      }
     }
     await cart.save();
     return res.status(201).json({ cart });

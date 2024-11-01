@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import data from "../Data/data.json";
 
 const NewArrivals = () => {
@@ -13,6 +14,22 @@ const NewArrivals = () => {
     selectedCategory === "All"
       ? filteredProducts.slice(0, 12)
       : filteredProducts;
+
+  const addToCart = async (product) => {
+    const addingToCart = await axios.post(
+      `${import.meta.env.VITE_baseURL}/cart/`,
+      {
+        userID: localStorage.getItem("userID"),
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        category: product.category,
+        discount: product.discount,
+        quantity: product.quantity,
+      }
+    );
+    // console.log(addingToCart);
+  };
 
   return (
     <div
@@ -65,7 +82,7 @@ const NewArrivals = () => {
                 {product.name}
               </h2>
               <p className="text-xl font-semibold text-gray-700 mb-2">
-                {product.price}
+                Rs. {product.price}
               </p>
               <div
                 className={`text-lg mb-1 ${
@@ -85,7 +102,10 @@ const NewArrivals = () => {
               </div>
 
               <div className="text-center mt-4">
-                <button className="bg-[#134E4A] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#0f3e3a] focus:outline-none focus:ring-2 focus:ring-[#134E4A] focus:ring-opacity-50 transition duration-300 w-full">
+                <button
+                  onClick={() => addToCart(product)}
+                  className="bg-[#134E4A] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#0f3e3a] focus:outline-none focus:ring-2 focus:ring-[#134E4A] focus:ring-opacity-50 transition duration-300 w-full"
+                >
                   Add to Cart
                 </button>
                 <button className="bg-[#134E4A] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#0f3e3a] focus:outline-none focus:ring-2 focus:ring-[#134E4A] focus:ring-opacity-50 transition duration-300 w-full mt-4">

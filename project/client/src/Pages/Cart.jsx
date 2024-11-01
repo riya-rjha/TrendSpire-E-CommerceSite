@@ -106,7 +106,7 @@ const Cart = () => {
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="flex-1">
           <h1 className="text-3xl lg:text-4xl font-bold text-green-800 mb-4">
-            Your Cart{" "}
+            Shopping Cart{" "}
             <span className="italic font-black capitalize underline text-emerald-900">
               of {username.toLowerCase()}
             </span>
@@ -217,7 +217,7 @@ const Cart = () => {
                 prod.quantity > 0 && (
                   <div key={prod._id} className="flex justify-between mt-2">
                     <p className="text-gray-700">{prod.name}</p>
-                    <p className="text-gray-700">${prod.price}</p>
+                    <p className="text-gray-700">${prod.price * prod.quantity}</p>
                   </div>
                 )
             )}
