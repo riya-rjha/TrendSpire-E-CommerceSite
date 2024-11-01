@@ -95,15 +95,15 @@ const Navbar = () => {
           {username !== "User" ? (
             <Link to="/cart">
               {" "}
-              <FaShoppingCart className="text-3xl cursor-pointer transition-all delay-75 hover:text-blue-500" />
+              <FaShoppingCart className="text-3xl cursor-pointer transition-all delay-75 hover:text-green-500" />
             </Link>
           ) : (
             <Link to="/user/login">
               {" "}
-              <FaShoppingCart className="text-3xl cursor-pointer transition-all delay-75 hover:text-blue-500" />
+              <FaShoppingCart className="text-3xl cursor-pointer transition-all delay-75 hover:text-green-500" />
             </Link>
           )}
-          <Link to='/fav'>
+          <Link to="/fav">
             <FaHeart className="text-3xl cursor-pointer transition-all delay-75 hover:text-red-500" />
           </Link>
         </div>
