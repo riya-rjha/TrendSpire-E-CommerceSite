@@ -1,4 +1,7 @@
 import React from "react";
+import user1 from "../../public/images/user1.avif";
+import user2 from "../../public/images/user2.avif";
+import user3 from "../../public/images/user3.avif";
 
 const Testimonials = () => {
   return (
@@ -16,7 +19,7 @@ const Testimonials = () => {
           <div className="w-24 h-24 bg-zinc-300 rounded-full overflow-hidden">
             <img
               className="w-full h-full object-cover"
-              src="../../public/images/user2.avif"
+              src={user2}
               alt="Customer 1"
             />
           </div>
@@ -40,7 +43,7 @@ const Testimonials = () => {
           <div className="w-24 h-24 bg-zinc-300 rounded-full overflow-hidden">
             <img
               className="w-full h-full object-cover"
-              src="../../public/images/user1.avif"
+              src={user1}
               alt="Customer 2"
             />
           </div>
@@ -64,7 +67,7 @@ const Testimonials = () => {
           <div className="w-24 h-24 bg-zinc-300 rounded-full overflow-hidden">
             <img
               className="w-full h-full object-cover"
-              src="../../public/images/user3.avif"
+              src={user3}
               alt="Customer 3"
             />
           </div>

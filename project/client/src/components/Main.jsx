@@ -1,18 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import fashion from '../../public/images/fashion-2.avif'
+import fashion1 from '../../public/images/fashion-1.avif';
+import fashion2 from '../../public/images/fashion-2.avif';
+import fashion3 from '../../public/images/fashion-3.avif';
+import fashion4 from '../../public/images/fashion-4.avif';
+import fashion5 from '../../public/images/fashion-5.avif';
+import fashion6 from '../../public/images/fashion-6.avif';
 
 const Main = () => {
   return (
     <div className="flex flex-col items-center justify-center md:flex-row md:justify-between p-10 space-y-6 md:space-y-0 md:space-x-6">
       <div className="hidden md:block">
         <img
-          src={fashion}
+          src={fashion2}
           alt="Fashion Left"
           className="w-full max-w-xs object-cover rounded-lg shadow-md"
         />
         <img
-          src="../../public/images/fashion-5.avif"
+          src={fashion5}
           alt="Fashion Left"
           className="w-full max-w-xs object-cover mt-8 rounded-lg shadow-md"
         />
@@ -20,7 +25,7 @@ const Main = () => {
 
       <div className="flex flex-col items-center text-center md:text-left max-w-lg w-full md:flex-grow">
         <img
-          src="../../public/images/fashion-4.avif"
+          src={fashion4}
           alt="Fashion Top"
           className="w-full object-cover rounded-lg shadow-md mb-4"
         />
@@ -36,7 +41,7 @@ const Main = () => {
           </button>
         </Link>
         <img
-          src="../../public/images/fashion-3.avif"
+          src={fashion3}
           alt="Fashion Bottom"
           className="w-full object-cover rounded-lg shadow-md mt-6"
         />
@@ -44,12 +49,12 @@ const Main = () => {
 
       <div className="hidden md:block">
         <img
-          src="../../public/images/fashion-1.avif"
+          src={fashion1}
           alt="Fashion Right"
           className="w-full max-w-xs object-cover rounded-lg shadow-md h-[480px]"
         />
         <img
-          src="../../public/images/fashion-6.avif"
+          src={fashion6}
           alt="Fashion Right"
           className="w-full mt-8 max-w-xs object-cover rounded-lg shadow-md h-[480px]"
         />
