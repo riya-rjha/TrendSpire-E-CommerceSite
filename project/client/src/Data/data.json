@@ -60,7 +60,7 @@
     {
       "name": "Shiny Dress",
       "price": 980,
-      "image": "../../public/images/dresses/shiny.jpg",
+      "image": "https://img.freepik.com/premium-photo/young-beautiful-girls-posing-blue-sky-background_1024630-1733.jpg?ga=GA1.1.448448890.1721050418&semt=ais_siglip",
       "rating": 4,
       "stock": "no",
       "category": "Women’s Fashion",
@@ -70,7 +70,7 @@
     {
       "name": "White Dress",
       "price": 1350,
-      "image": "../../public/images/dresses/white.avif",
+      "image": "https://img.freepik.com/free-photo/young-elegant-woman-holding-glass-near-tinsel_23-2147981786.jpg?ga=GA1.1.448448890.1721050418&semt=ais_siglip",
       "rating": 3,
       "stock": "yes",
       "category": "Women’s Fashion",
@@ -80,7 +80,7 @@
     {
       "name": "Long Dress",
       "price": 1460,
-      "image": "../../public/images/dresses/long.avif",
+      "image": "https://img.freepik.com/free-photo/beautiful-sexy-brunette-is-standing-near-pool-long-blue-separated-dress-woman-with-long-hair-perfect-body-pretty-face-make-up-palm-trees_343629-171.jpg?ga=GA1.1.448448890.1721050418&semt=ais_siglip",
       "rating": 4,
       "stock": "yes",
       "category": "Women’s Fashion",
@@ -90,7 +90,7 @@
     {
       "name": "Colorful Dress",
       "price": 1580,
-      "image": "../../public/images/dresses/colorful.avif",
+      "image": "https://img.freepik.com/premium-photo/stunning-womens-dress-with-feathered-skirt_1045702-8.jpg?ga=GA1.1.448448890.1721050418&semt=ais_siglip",
       "rating": 5,
       "stock": "yes",
       "category": "Women’s Fashion",
@@ -100,7 +100,7 @@
     {
       "name": "White Dress",
       "price": 1200,
-      "image": "../../public/images/dresses/shirt.avif",
+      "image": "https://img.freepik.com/premium-photo/woman-pink-dress-stands-front-blue-wall-with-blue-background-with-design-woman-white-dress_658385-103.jpg?ga=GA1.1.448448890.1721050418&semt=ais_siglip",
       "rating": 4,
       "stock": "yes",
       "category": "Women’s Fashion",
