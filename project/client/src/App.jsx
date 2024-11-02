@@ -51,14 +51,7 @@ const App = () => {
         <Route path="/favs" element={<Favourites />} />
         <Route path="/faqs" element={<FAQs />} />
 
-        <Route
-          path="/chat"
-          element={
-            <>
-              <Chatbot />
-            </>
-          }
-        ></Route>
+        <Route path="/chat" element={<Chatbot />}></Route>
         <Route path="/user/register" element={<Register />}></Route>
         <Route path="/user/login" element={<Login />}></Route>
         <Route
