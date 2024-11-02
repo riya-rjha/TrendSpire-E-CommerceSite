@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import fashion from '../../public/images/fashion-2.avif'
 
 const Main = () => {
   return (
     <div className="flex flex-col items-center justify-center md:flex-row md:justify-between p-10 space-y-6 md:space-y-0 md:space-x-6">
       <div className="hidden md:block">
         <img
-          src="../../public/images/fashion-2.avif"
+          src={fashion}
           alt="Fashion Left"
           className="w-full max-w-xs object-cover rounded-lg shadow-md"
         />
