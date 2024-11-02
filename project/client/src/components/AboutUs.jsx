@@ -1,4 +1,8 @@
 import React from "react";
+import cartImage from '../../public/images/cart.png';
+import chatbotImage from '../../public/images/chatbot.png';
+import trendImage from '../../public/images/trend.png';
+import updateImage from '../../public/images/update.png';
 
 const AboutUs = () => {
   return (
@@ -12,7 +16,7 @@ const AboutUs = () => {
             <div className="w-24 h-24 bg-sky-100 md:bg-transparent rounded-full flex justify-center items-center mb-4 md:mb-0 md:mr-4">
               <div
                 className="w-16 h-16 bg-contain bg-no-repeat bg-center"
-                style={{ backgroundImage: "url('../../public/images/cart.png')" }}
+                style={{ backgroundImage: `url(${cartImage})` }}
               />
             </div>
             <div>
@@ -27,10 +31,10 @@ const AboutUs = () => {
             </div>
           </div>
           <div className="bg-white p-6 hover:shadow-lg rounded-lg shadow-md flex flex-col md:flex-row items-center">
-            <div className="w-24 h-24 bg-lime-50 rounded-full  md:bg-transparent  flex justify-center items-center mb-4 md:mb-0 md:mr-4">
+            <div className="w-24 h-24 bg-lime-50 rounded-full md:bg-transparent flex justify-center items-center mb-4 md:mb-0 md:mr-4">
               <div
                 className="w-16 h-16 bg-contain bg-no-repeat bg-center"
-                style={{ backgroundImage: "url('../../public/images/chatbot.png')" }}
+                style={{ backgroundImage: `url(${chatbotImage})` }}
               />
             </div>
             <div>
@@ -45,10 +49,10 @@ const AboutUs = () => {
             </div>
           </div>
           <div className="bg-white p-6 hover:shadow-lg rounded-lg shadow-md flex flex-col md:flex-row items-center">
-            <div className="w-24 h-24 bg-orange-50 rounded-full  md:bg-transparent  flex justify-center items-center mb-4 md:mb-0 md:mr-4">
+            <div className="w-24 h-24 bg-orange-50 rounded-full md:bg-transparent flex justify-center items-center mb-4 md:mb-0 md:mr-4">
               <div
                 className="w-16 h-16 bg-contain bg-no-repeat bg-center"
-                style={{ backgroundImage: "url('../../public/images/trend.png')" }}
+                style={{ backgroundImage: `url(${trendImage})` }}
               />
             </div>
             <div>
@@ -63,10 +67,10 @@ const AboutUs = () => {
             </div>
           </div>
           <div className="bg-white p-6 hover:shadow-lg rounded-lg shadow-md flex flex-col md:flex-row items-center">
-            <div className="w-24 h-24 bg-indigo-50 rounded-full  md:bg-transparent  flex justify-center items-center mb-4 md:mb-0 md:mr-4">
+            <div className="w-24 h-24 bg-indigo-50 rounded-full md:bg-transparent flex justify-center items-center mb-4 md:mb-0 md:mr-4">
               <div
                 className="w-16 h-16 bg-contain bg-no-repeat bg-center"
-                style={{ backgroundImage: "url('../../public/images/update.png')" }}
+                style={{ backgroundImage: `url(${updateImage})` }}
               />
             </div>
             <div>
