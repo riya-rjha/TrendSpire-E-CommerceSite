@@ -5,14 +5,14 @@ import AboutUs from "./components/AboutUs";
 import Footer from "./components/Footer";
 import NewArrivals from "./components/NewArrivals";
 import Testimonials from "./components/Testimonials";
-import Register from "./pages/Register";
-import Chatbot from "./pages/Chatbot";
+import Register from "./pages/Register.jsx";
+import Chatbot from "./pages/Chatbot.jsx";
 import { Route, Routes, useLocation } from "react-router-dom";
-import Login from "./pages/Login";
-import ThankYouPage from "./pages/ThankyouPage";
-import Cart from "./pages/Cart";
-import Favourites from "./pages/Favourites";
-import FAQs from "./pages/FAQs";
+import Login from "./pages/Login.jsx";
+import ThankYouPage from "./pages/ThankyouPage.jsx";
+import Cart from "./pages/Cart.jsx";
+import Favourites from "./pages/Favourites.jsx";
+import FAQs from "./pages/FAQs.jsx";
 
 const App = () => {
   const username = localStorage.getItem("username");
