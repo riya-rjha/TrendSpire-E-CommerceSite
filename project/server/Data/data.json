@@ -51,7 +51,7 @@
     {
       "name": "Shiny Dress",
       "price": "Rs. 980",
-      "image": "/public/images/dresses/shiny.jpg",
+      "image": "../../public/images/dresses/shiny.jpg",
       "rating": 4,
       "stock": "no",
       "category": "Women’s Fashion"
@@ -59,7 +59,7 @@
     {
       "name": "White Dress",
       "price": "Rs. 1350",
-      "image": "/public/images/dresses/white.avif",
+      "image": "../../public/images/dresses/white.avif",
       "rating": 3,
       "stock": "yes",
       "category": "Women’s Fashion"
@@ -67,7 +67,7 @@
     {
       "name": "Long Dress",
       "price": "Rs. 1460",
-      "image": "/public/images/dresses/long.avif",
+      "image": "../../public/images/dresses/long.avif",
       "rating": 4,
       "stock": "yes",
       "category": "Women’s Fashion"
@@ -75,7 +75,7 @@
     {
       "name": "Colorful Dress",
       "price": "Rs. 1580",
-      "image": "/public/images/dresses/colorful.avif",
+      "image": "../../public/images/dresses/colorful.avif",
       "rating": 5,
       "stock": "yes",
       "category": "Women’s Fashion"
@@ -83,7 +83,7 @@
     {
       "name": "White Dress",
       "price": "Rs. 1200",
-      "image": "/public/images/dresses/shirt.avif",
+      "image": "../../public/images/dresses/shirt.avif",
       "rating": 4,
       "stock": "yes",
       "category": "Women’s Fashion"

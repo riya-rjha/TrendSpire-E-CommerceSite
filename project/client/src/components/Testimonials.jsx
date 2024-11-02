@@ -16,7 +16,7 @@ const Testimonials = () => {
           <div className="w-24 h-24 bg-zinc-300 rounded-full overflow-hidden">
             <img
               className="w-full h-full object-cover"
-              src="/public/images/user2.avif"
+              src="../../public/images/user2.avif"
               alt="Customer 1"
             />
           </div>
@@ -40,7 +40,7 @@ const Testimonials = () => {
           <div className="w-24 h-24 bg-zinc-300 rounded-full overflow-hidden">
             <img
               className="w-full h-full object-cover"
-              src="/public/images/user1.avif"
+              src="../../public/images/user1.avif"
               alt="Customer 2"
             />
           </div>
@@ -64,7 +64,7 @@ const Testimonials = () => {
           <div className="w-24 h-24 bg-zinc-300 rounded-full overflow-hidden">
             <img
               className="w-full h-full object-cover"
-              src="/public/images/user3.avif"
+              src="../../public/images/user3.avif"
               alt="Customer 3"
             />
           </div>

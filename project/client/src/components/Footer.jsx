@@ -76,7 +76,7 @@ const Footer = () => {
                   className="w-8 h-8 flex items-center justify-center cursor-pointer"
                 >
                   <img
-                    src="/public/images/github.png"
+                    src="../../public/images/github.png"
                     alt="GitHub"
                     className="w-8 h-8"
                   />
@@ -87,7 +87,7 @@ const Footer = () => {
                   className="w-8 h-8 flex items-center justify-center cursor-pointer"
                 >
                   <img
-                    src="/public/images/linkedin.png"
+                    src="../../public/images/linkedin.png"
                     alt="LinkedIn"
                     className="w-8 h-8"
                   />
@@ -98,7 +98,7 @@ const Footer = () => {
                   className="w-8 h-8 flex items-center justify-center cursor-pointer"
                 >
                   <img
-                    src="/public/images/twitter.png"
+                    src="../../public/images/twitter.png"
                     alt="Twitter"
                     className="w-8 h-8"
                   />
@@ -134,7 +134,7 @@ const Footer = () => {
                 className="flex items-center gap-2 text-base cursor-pointer hover:text-teal-300"
               >
                 <img
-                  src="/public/images/github.png"
+                  src="../../public/images/github.png"
                   alt="GitHub"
                   className="w-6 h-6"
                 />
@@ -146,7 +146,7 @@ const Footer = () => {
                 className="flex items-center gap-2 text-base cursor-pointer hover:text-teal-300"
               >
                 <img
-                  src="/public/images/linkedin.png"
+                  src="../../public/images/linkedin.png"
                   alt="LinkedIn"
                   className="w-6 h-6"
                 />
@@ -158,7 +158,7 @@ const Footer = () => {
                 className="flex items-center gap-2 text-base cursor-pointer hover:text-teal-300"
               >
                 <img
-                  src="/public/images/twitter.png"
+                  src="../../public/images/twitter.png"
                   alt="Twitter"
                   className="w-6 h-6"
                 />
