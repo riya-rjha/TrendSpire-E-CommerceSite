@@ -92,17 +92,10 @@ const Navbar = () => {
           )}
         </div>
         <div className="-mt-1 ml-3 md:mt-0 md:ml-0 flex gap-6">
-          {username !== "User" ? (
-            <Link to="/cart">
-              {" "}
-              <FaShoppingCart className="text-3xl cursor-pointer transition-all delay-75 hover:text-green-500" />
-            </Link>
-          ) : (
-            <Link to="/user/login">
-              {" "}
-              <FaShoppingCart className="text-3xl cursor-pointer transition-all delay-75 hover:text-green-500" />
-            </Link>
-          )}
+          <Link to="/cart">
+            {" "}
+            <FaShoppingCart className="text-3xl cursor-pointer transition-all delay-75 hover:text-green-500" />
+          </Link>
           <Link to="/favs">
             <FaHeart className="text-3xl cursor-pointer transition-all delay-75 hover:text-red-500" />
           </Link>

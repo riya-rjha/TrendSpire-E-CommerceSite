@@ -28,9 +28,12 @@ const Chatbot = () => {
     ]);
 
     try {
-      const response = await axios.post("http://localhost:5000/chat", {
-        userMessage,
-      });
+      const response = await axios.post(
+        `${import.meta.env.VITE_CHATBOT_URL}/chat`,
+        {
+          userMessage,
+        }
+      );
       const botMessage = response.data.response;
 
       setMessages((prevMessages) => [
