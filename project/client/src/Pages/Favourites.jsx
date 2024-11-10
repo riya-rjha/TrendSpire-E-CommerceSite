@@ -26,7 +26,7 @@ const Favourites = () => {
   }, []);
 
   return (
-    <div className="p-4 bg-white flex flex-col items-center w-full gap-8">
+    <div className="p-4 bg-white flex flex-col items-center w-full gap-8 mb-5">
       <h1 className="text-5xl uppercase mt-5 font-bold prompt-black">
         Favourites
       </h1>

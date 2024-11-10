@@ -6,7 +6,7 @@ import twitterImg from "../../public/images/twitter.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#134E4A] text-white pt-12 pb-6">
+    <footer className="bg-[#134E4A] text-white pt-8 pb-6">
       <div className="container mx-auto px-6">
         <div className="hidden md:flex flex-col md:flex-row md:justify-between gap-12">
           <div className="flex flex-col mb-12 md:mb-0">

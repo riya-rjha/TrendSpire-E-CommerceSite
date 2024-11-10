@@ -48,7 +48,15 @@ const App = () => {
         />
 
         <Route path="/order" element={<ThankYouPage />} />
-        <Route path="/favs" element={<Favourites />} />
+        <Route
+          path="/favs"
+          element={
+            <>
+              <Favourites />
+              <Footer />
+            </>
+          }
+        />
         <Route path="/faqs" element={<FAQs />} />
 
         <Route path="/chat" element={<Chatbot />}></Route>
@@ -58,7 +66,7 @@ const App = () => {
           path="/cart"
           element={
             <>
-              {username !== "User" ? <Cart /> : <></>}
+              <Cart />
               <Footer />
             </>
           }
