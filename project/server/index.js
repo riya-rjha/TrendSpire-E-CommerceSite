@@ -29,7 +29,7 @@ const connectToDatabase = async () => {
   } catch (error) {
     console.error(error.message);
   }
-  app.listen(process.env.PORT, () => {
+  app.listen(process.env.PORT || 8000, () => {
     console.log(`Successfully connected to PORT ${process.env.PORT}`);
   });
 };

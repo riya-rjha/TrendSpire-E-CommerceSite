@@ -51,6 +51,7 @@ const Login = () => {
         },
         autoHideDuration: 3000,
       });
+      console.log(error);
     }
   };
 

@@ -55,10 +55,7 @@ const Navbar = () => {
         >
           Home
         </Link>
-        <a
-          href="#About"
-          className="px-4 hover:text-teal-300 transition-colors"
-        >
+        <a href="#About" className="px-4 hover:text-teal-300 transition-colors">
           About Us
         </a>
         <a
@@ -91,10 +88,16 @@ const Navbar = () => {
 
         {/* Simple Links for Cart and Favorites on Small Screens */}
         <div className="flex flex-col gap-4 md:hidden -mt-3 md:mt-4">
-          <Link to="/cart" className="hover:text-green-500 ml-4 transition-colors">
+          <Link
+            to="/cart"
+            className="hover:text-green-500 ml-4 transition-colors"
+          >
             Cart
           </Link>
-          <Link to="/favs" className="hover:text-red-500 ml-4 transition-colors">
+          <Link
+            to="/favs"
+            className="hover:text-red-500 ml-4 transition-colors"
+          >
             Favorites
           </Link>
         </div>
