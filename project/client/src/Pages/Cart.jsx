@@ -25,31 +25,19 @@ const Cart = () => {
     const calculateSum = () => {
       let sum = 0;
       products.forEach((prod) => {
-        sum += prod.price * prod.quantity;
+        let productTotal = prod.price * prod.quantity;
+        let productDiscount = (prod.discount / 100) * productTotal;
+        sum += productTotal - productDiscount;
       });
       setCalcSum(sum);
     };
     calculateSum();
   }, [products]);
 
-  useEffect(() => {
-    let disc = 0;
-    products.forEach((prod) => {
-      if (prod.quantity > 0) {
-        disc += prod.discount * prod.quantity;
-      }
-    });
-    setDiscount(disc);
-  }, [products]);
-
   const applyDiscount = () => {
-    if (count !== 0) {
-      return;
-    }
+    if (count !== 0) return;
     let currSum = calSum;
-    let costAfterDiscount = (discount / 100) * currSum;
-    let finalSum = (currSum - costAfterDiscount).toFixed(2);
-    setCalcSum(finalSum);
+    setCalcSum(currSum.toFixed(2));
     setCount(count + 1);
   };
 
@@ -97,12 +85,11 @@ const Cart = () => {
       });
       setTotalQuantity(totalQuantity);
     };
-
     totalQuantityCheck();
   }, [products]);
 
   return (
-    <div className="bg-green-50  p-6 md:p-12 lg:p-16">
+    <div className="bg-green-50 p-6 md:p-12 lg:p-16">
       <div className="flex flex-col lg:flex-row gap-8">
         {username !== null ? (
           <>
@@ -150,7 +137,7 @@ const Cart = () => {
                             </div>
                             <div className="flex flex-col items-end">
                               <p className="text-lg font-semibold text-green-800">
-                                ${product.price}
+                                ${(product.price * product.quantity).toFixed(2)}
                               </p>
                               <div className="flex items-center mt-2">
                                 <button
@@ -184,7 +171,7 @@ const Cart = () => {
                   ))}
                 </div>
               ) : (
-                <div className="flex flex-col rounded-md  justify-center p-6 bg-white text-green-700 ">
+                <div className="flex flex-col rounded-md justify-center p-6 bg-white text-green-700 ">
                   <h2 className="text-3xl font-semibold mb-2">
                     Oops! Your Cart is Empty
                   </h2>
@@ -219,9 +206,23 @@ const Cart = () => {
                   (prod) =>
                     prod.quantity > 0 && (
                       <div key={prod._id} className="flex justify-between mt-2">
-                        <p className="text-gray-700">{prod.name}</p>
                         <p className="text-gray-700">
-                          ${prod.price * prod.quantity}
+                          {prod.name}{" "}
+                          <span className="text-red-600 font-semibold">
+                            (-$
+                            {(
+                              (prod.price * prod.discount * prod.quantity) /
+                              100
+                            ).toFixed(2)}
+                            )
+                          </span>
+                        </p>
+                        <p className="text-gray-700">
+                          $
+                          {(
+                            prod.price -
+                            (prod.price * prod.quantity * prod.discount) / 100
+                          ).toFixed(2)}
                         </p>
                       </div>
                     )
@@ -229,7 +230,7 @@ const Cart = () => {
                 <div className="flex justify-between mt-4 border-t pt-2">
                   <p className="text-lg font-semibold text-green-800">Total</p>
                   <p className="text-lg font-semibold text-green-800">
-                    ${calSum}
+                    ${calSum.toFixed(2)}
                   </p>
                 </div>
                 {count === 1 ? (
@@ -245,7 +246,7 @@ const Cart = () => {
                           : "hidden"
                       }
                     >
-                      Remove {discount}% Discount
+                      Remove Discount
                     </button>
                   </>
                 ) : (
@@ -257,7 +258,7 @@ const Cart = () => {
                         : "hidden"
                     }
                   >
-                    Apply {discount}% Discount
+                    Apply Discount
                   </button>
                 )}
               </div>
@@ -266,7 +267,7 @@ const Cart = () => {
                   Cart Total
                 </p>
                 <p className="text-2xl font-bold text-green-800 mt-2">
-                  ${calSum}
+                  ${calSum.toFixed(2)}
                 </p>
                 <Link to="/order">
                   <button className="bg-green-600 text-white w-full py-2 rounded-md mt-4">
