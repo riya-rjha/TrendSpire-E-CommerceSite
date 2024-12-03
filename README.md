@@ -16,11 +16,12 @@
 This repository is split into two main directories:
 
 1. **project/**: Contains the main e-commerce application.
+
    - **server/**: Backend logic for handling user authentication, product browsing, order processing, cart, and favorite functionalities.
    - **client/**: Frontend built with modern web technologies for a smooth user experience.
 
-2. **chatbot/**: 
-    - **server/**: Contains Ivy's chatbot server, providing real-time fashion advice.
+2. **chatbot/**:
+   - **server/**: Contains Ivy's chatbot server, providing real-time fashion advice.
 
 ## Getting Started
 
@@ -30,6 +31,30 @@ Ensure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (v14 or higher)
 - [npm](https://www.npmjs.com/)
+
+### Setting up the .env
+
+#### project/server/.env
+
+```
+PORT=XXXX
+MONGODBURL=""
+FRONTEND_URL=""
+IP_URL=""
+```
+
+#### project/client/.env
+
+```
+VITE_baseURL=""
+VITE_CHATBOT_URL=""
+```
+
+#### chatbot/server/.env
+
+```
+API_KEY=""
+```
 
 ### Installation
 
@@ -53,7 +78,6 @@ Ensure you have the following installed:
    cd client
    npm install
    ```
-
 
 3. Navigate to the **chatbot** directory to install dependencies for the Ivy chatbot:
 
@@ -99,3 +123,34 @@ The chatbot will be running, and you can integrate it into the frontend client.
 - **Database**: MongoDB
 - **Chatbot**: Node.js, Open AI API
 
+## Dependencies
+
+### project/server
+
+```
+   "dependencies": {
+   "bcrypt": "^5.1.1",
+   "cors": "^2.8.5",
+   "dotenv": "^16.4.5",
+   "express": "^4.19.2",
+   "firebase": "^10.12.4",
+   "jsonwebtoken": "^9.0.2",
+   "mongodb": "^6.8.0",
+   "mongoose": "^8.5.2",
+   "nodemon": "^3.1.4"
+   }
+```
+
+### project/client
+
+```
+  "dependencies": {
+    "axios": "^1.7.8",
+    "notistack": "^3.0.1",
+    "react": "^18.3.1",
+    "react-cookie": "^7.2.0",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.3.0",
+    "react-router-dom": "^6.25.1"
+  }
+```
