@@ -127,6 +127,182 @@ app.post("/chat", async (req, res) => {
           },
         ],
       },
+      {
+        role: "user",
+        parts: [
+          {
+            text: "Should I wear a sweater or a t-shirt in winter?",
+          },
+        ],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "In winter, a sweater is a great choice as it will keep you warm. You can pair it with jeans or leggings, and add a scarf for extra coziness. A t-shirt might be suitable for layering under a sweater or jacket, but on its own, it won’t keep you as warm. What style do you prefer?",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [
+          {
+            text: "I like cozy, but also trendy. Any suggestions?",
+          },
+        ],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "If you like cozy and trendy, try a chunky knit sweater with a trendy pattern, like stripes or color-blocking. Pair it with high-waisted jeans and ankle boots for a chic, yet comfortable look. You can also accessorize with a stylish beanie or beret! How does that sound?",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [
+          {
+            text: "What about pairing a sweater with a skirt?",
+          },
+        ],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "A sweater with a skirt is a perfect combo for winter! Opt for a midi or pleated skirt and pair it with knee-high boots for warmth. A chunky sweater tucked into the skirt or a cropped one works great. For extra style, add tights or leggings underneath. What colors do you like to wear?",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [
+          {
+            text: "Can I wear a denim jacket in winter?",
+          },
+        ],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "While a denim jacket is a great piece for fall, in winter, you'll want to layer it with a thicker coat or hoodie for warmth. You could wear a denim jacket under a wool coat or over a chunky sweater. What other outerwear do you have in mind?",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [
+          {
+            text: "What should I wear to a formal dinner?",
+          },
+        ],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "For a formal dinner, I recommend a classy cocktail dress or a tailored pantsuit. Pair it with elegant heels and a clutch bag. Keep your jewelry subtle but statement-making, like a delicate necklace or a pair of drop earrings. Do you have a preferred color for formal events?",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [
+          {
+            text: "Should I wear leggings or jeans for casual outings?",
+          },
+        ],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "For casual outings, both leggings and jeans work well! Leggings are comfy and perfect for a relaxed look, especially when paired with an oversized sweater or tunic. Jeans give a more structured look, which you can dress up or down with a blouse or a casual tee. Which style do you prefer?",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [
+          {
+            text: "How can I wear scarves stylishly?",
+          },
+        ],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "Scarves can elevate your look in winter! Try a large, cozy knit scarf and drape it over your shoulders or wrap it around your neck for a chic effect. For a more sophisticated look, you can opt for a silk scarf tied around your neck or as a headband. Do you prefer chunky or delicate scarves?",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [
+          {
+            text: "What shoes should I wear for a night out?",
+          },
+        ],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "For a night out, heels or stylish boots are a great choice! If you're aiming for comfort, block heels or ankle boots are perfect. If you're going for glam, a strappy heel or stiletto can make your outfit pop. Pair with a mini dress or a tailored jumpsuit for a sophisticated look. What kind of vibe are you going for?",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [
+          {
+            text: "Should I wear a dress or jumpsuit to a cocktail party?",
+          },
+        ],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "Both are great options for a cocktail party! A dress, especially a little black dress, is always a classic choice for elegance. A jumpsuit can give you a modern, fashion-forward vibe while still being dressy. Add some bold accessories to complete your look. What is your style preference?",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [
+          {
+            text: "Can I wear white after Labor Day?",
+          },
+        ],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "Absolutely! Wearing white after Labor Day is totally acceptable. You can opt for a chic winter white outfit, like a white sweater with dark trousers or a white coat with a scarf. Mixing in textures like wool or cashmere can help give a winter feel while keeping it stylish. How do you like to style white?",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [
+          {
+            text: "What should I wear for a beach vacation?",
+          },
+        ],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "For a beach vacation, light, airy fabrics like linen or cotton are key. A flowy sundress, shorts, and a beachy top are perfect for the daytime. Don't forget a wide-brimmed hat, sunglasses, and a beach bag to complete your look. For evening, you could go with a casual maxi dress or a stylish romper. What colors do you like for beachwear?",
+          },
+        ],
+      },
     ],
   });
 

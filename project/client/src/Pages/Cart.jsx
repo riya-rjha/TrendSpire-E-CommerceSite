@@ -6,7 +6,6 @@ const Cart = () => {
   let username = localStorage.getItem("username");
   const [products, setProducts] = useState([]);
   const [calSum, setCalcSum] = useState(0);
-  const [count, setCount] = useState(0);
   const [totalQuantity, setTotalQuantity] = useState(0);
 
   useEffect(() => {
@@ -34,10 +33,8 @@ const Cart = () => {
   }, [products]);
 
   const applyDiscount = () => {
-    if (count !== 0) return;
     let currSum = calSum;
     setCalcSum(parseInt(currSum.toFixed(2), 10));
-    setCount(count + 1);
   };
 
   const removeDiscount = () => {
@@ -46,7 +43,6 @@ const Cart = () => {
       sum += prod.price * prod.quantity;
     });
     setCalcSum(sum);
-    setCount(0);
   };
 
   const updateQuantity = (product, action) => {
@@ -208,58 +204,42 @@ const Cart = () => {
                         <p className="text-gray-700">
                           {prod.name}{" "}
                           <span className="text-red-600 font-semibold">
-                            (-$
-                            {(
-                              (prod.price * prod.discount * prod.quantity) /
-                              100
-                            ).toFixed(2)}
-                            )
+                            -prod discount
                           </span>
                         </p>
-                        <p className="text-gray-700">
-                          $
-                          {(
-                            prod.price -
-                            (prod.price * prod.quantity * prod.discount) / 100
-                          ).toFixed(2)}
-                        </p>
+                        <p className="text-gray-700">price after discount</p>
                       </div>
                     )
                 )}
                 <div className="flex justify-between mt-4 border-t pt-2">
                   <p className="text-lg font-semibold text-green-800">Total</p>
                   <p className="text-lg font-semibold text-green-800">
-                    ${calSum.toFixed(2)}
+                    total price
                   </p>
                 </div>
-                {count === 1 ? (
-                  <>
-                    <p className="text-md text-center text-red-600 mt-2">
-                      Dare to click only if you're Jr. Ambani 🤭
-                    </p>
-                    <button
-                      onClick={removeDiscount}
-                      className={
-                        totalQuantity > 0
-                          ? "bg-red-600 text-white w-full py-2 rounded-md mt-4"
-                          : "hidden"
-                      }
-                    >
-                      Remove Discount
-                    </button>
-                  </>
-                ) : (
-                  <button
-                    onClick={applyDiscount}
-                    className={
-                      totalQuantity > 0
-                        ? "bg-green-600 text-white w-full py-2 rounded-md mt-4"
-                        : "hidden"
-                    }
-                  >
-                    Apply Discount
-                  </button>
-                )}
+                <p className="text-md text-center text-red-600 mt-2">
+                  Dare to click only if you're Jr. Ambani 🤭
+                </p>
+                <button
+                  onClick={removeDiscount}
+                  className={
+                    totalQuantity > 0
+                      ? "bg-red-600 text-white w-full py-2 rounded-md mt-4"
+                      : "hidden"
+                  }
+                >
+                  Remove Discount
+                </button>
+                <button
+                  onClick={applyDiscount}
+                  className={
+                    totalQuantity > 0
+                      ? "bg-green-600 text-white w-full py-2 rounded-md mt-4"
+                      : "hidden"
+                  }
+                >
+                  Apply Discount
+                </button>
               </div>
               <div className="bg-green-100 p-6 rounded-lg shadow-md">
                 <p className="text-lg font-semibold text-green-800">
