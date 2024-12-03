@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import data from "../Data/data.json";
+import { enqueueSnackbar } from "notistack";
 
 const NewArrivals = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -16,9 +17,8 @@ const NewArrivals = () => {
       : filteredProducts;
 
   const addToCart = async (product) => {
-    const addingToCart = await axios.post(
-      `${import.meta.env.VITE_baseURL}/cart/`,
-      {
+    try {
+      await axios.post(`${import.meta.env.VITE_baseURL}/cart/`, {
         userID: localStorage.getItem("userID"),
         name: product.name,
         price: product.price,
@@ -26,23 +26,55 @@ const NewArrivals = () => {
         category: product.category,
         discount: product.discount,
         quantity: product.quantity,
-      }
-    );
-    // console.log(addingToCart);
+      });
+      enqueueSnackbar("Item successfully added to cart!", {
+        variant: "success",
+        anchorOrigin: {
+          vertical: "top",
+          horizontal: "right",
+        },
+        autoHideDuration: 3000,
+      });
+    } catch (error) {
+      enqueueSnackbar("Could not add to cart!", {
+        variant: "error",
+        anchorOrigin: {
+          vertical: "top",
+          horizontal: "right",
+        },
+        autoHideDuration: 3000,
+      });
+    }
   };
 
   const addToFavourites = async (product) => {
-    const addingToFavourite = await axios.post(
-      `${import.meta.env.VITE_baseURL}/favs/`,
-      {
+    try {
+      await axios.post(`${import.meta.env.VITE_baseURL}/favs/`, {
         name: product.name,
         userID: localStorage.getItem("userID"),
         price: product.price,
         image: product.image,
         discount: product.discount,
-      }
-    );
-    console.log(addingToFavourite);
+      });
+      enqueueSnackbar("Item successfully added to favourites!", {
+        variant: "success",
+        anchorOrigin: {
+          vertical: "top",
+          horizontal: "right",
+        },
+        autoHideDuration: 3000,
+      });
+    } catch (error) {
+      console.log(error.message);
+      enqueueSnackbar("Product is already a favourite!", {
+        variant: "warning",
+        anchorOrigin: {
+          vertical: "top",
+          horizontal: "right",
+        },
+        autoHideDuration: 3000,
+      });
+    }
   };
 
   return (

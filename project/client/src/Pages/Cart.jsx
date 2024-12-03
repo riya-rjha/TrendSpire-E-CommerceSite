@@ -6,7 +6,6 @@ const Cart = () => {
   let username = localStorage.getItem("username");
   const [products, setProducts] = useState([]);
   const [calSum, setCalcSum] = useState(0);
-  const [discount, setDiscount] = useState(0);
   const [count, setCount] = useState(0);
   const [totalQuantity, setTotalQuantity] = useState(0);
 
