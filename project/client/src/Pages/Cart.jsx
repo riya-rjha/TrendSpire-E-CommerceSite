@@ -37,7 +37,7 @@ const Cart = () => {
   const applyDiscount = () => {
     if (count !== 0) return;
     let currSum = calSum;
-    setCalcSum(currSum.toFixed(2));
+    setCalcSum(parseInt(currSum.toFixed(2), 10));
     setCount(count + 1);
   };
 
