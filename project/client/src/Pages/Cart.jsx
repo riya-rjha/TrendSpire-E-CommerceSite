@@ -7,6 +7,9 @@ const Cart = () => {
   const [products, setProducts] = useState([]);
   const [calSum, setCalcSum] = useState(0);
   const [totalQuantity, setTotalQuantity] = useState(0);
+  const [deductedDiscount, setDeductedDiscount] = useState(0);
+  const [priceAfterDiscount, setPriceAfterDiscount] = useState(0);
+  const [remDisc, setRemDisc] = useState(false);
 
   useEffect(() => {
     const getProductCart = async () => {
@@ -24,17 +27,24 @@ const Cart = () => {
       let sum = 0;
       products.forEach((prod) => {
         let productTotal = prod.price * prod.quantity;
-        let productDiscount = (prod.discount / 100) * productTotal;
-        sum += productTotal - productDiscount;
+        sum += productTotal;
       });
       setCalcSum(sum);
     };
     calculateSum();
   }, [products]);
 
+  useEffect(() => {}, []);
+
   const applyDiscount = () => {
     let currSum = calSum;
+    let discPrice = 0;
+    products.forEach((prod) => {
+      discPrice += (prod.price * prod.discount * prod.quantity) / 100;
+      currSum = currSum - discPrice;
+    });
     setCalcSum(parseInt(currSum.toFixed(2), 10));
+    setRemDisc(!remDisc);
   };
 
   const removeDiscount = () => {
@@ -43,6 +53,7 @@ const Cart = () => {
       sum += prod.price * prod.quantity;
     });
     setCalcSum(sum);
+    setRemDisc(!remDisc);
   };
 
   const updateQuantity = (product, action) => {
@@ -83,6 +94,8 @@ const Cart = () => {
     totalQuantityCheck();
   }, [products]);
 
+  const setDiscountedPrice = () => {};
+
   return (
     <div className="bg-green-50 p-6 md:p-12 lg:p-16">
       <div className="flex flex-col lg:flex-row gap-8">
@@ -90,7 +103,7 @@ const Cart = () => {
           <>
             <div className="flex-1">
               <h1 className="text-3xl lg:text-4xl font-bold text-green-800 mb-4">
-                Shopping Cart{" "}
+                Shopping Cart (BETA VERSION)
                 <span className="italic font-black capitalize underline text-emerald-900">
                   of {username.toLowerCase()}
                 </span>
@@ -203,43 +216,66 @@ const Cart = () => {
                       <div key={prod._id} className="flex justify-between mt-2">
                         <p className="text-gray-700">
                           {prod.name}{" "}
-                          <span className="text-red-600 font-semibold">
-                            -prod discount
-                          </span>
+                          {remDisc ? (
+                            <span className="text-green-600 font-semibold transition-all delay-150">
+                              (-${prod.discount}%)
+                            </span>
+                          ) : (
+                            <span></span>
+                          )}
                         </p>
-                        <p className="text-gray-700">price after discount</p>
+                        {remDisc ? (
+                          <div>
+                            <span className="line-through text-gray-400 mr-2">
+                              ${(prod.price * prod.quantity).toFixed(2)}
+                            </span>
+                            <span>
+                              $
+                              {(prod.quantity * prod.price) - (prod.quantity * prod.discount * prod.price)/100}
+                            </span>
+                          </div>
+                        ) : (
+                          <p className="text-gray-700">
+                            ${(prod.price * prod.quantity).toFixed(2)}
+                          </p>
+                        )}
                       </div>
                     )
                 )}
                 <div className="flex justify-between mt-4 border-t pt-2">
                   <p className="text-lg font-semibold text-green-800">Total</p>
                   <p className="text-lg font-semibold text-green-800">
-                    total price
+                    ${calSum.toFixed(2)}
                   </p>
                 </div>
-                <p className="text-md text-center text-red-600 mt-2">
-                  Dare to click only if you're Jr. Ambani 🤭
-                </p>
-                <button
-                  onClick={removeDiscount}
-                  className={
-                    totalQuantity > 0
-                      ? "bg-red-600 text-white w-full py-2 rounded-md mt-4"
-                      : "hidden"
-                  }
-                >
-                  Remove Discount
-                </button>
-                <button
-                  onClick={applyDiscount}
-                  className={
-                    totalQuantity > 0
-                      ? "bg-green-600 text-white w-full py-2 rounded-md mt-4"
-                      : "hidden"
-                  }
-                >
-                  Apply Discount
-                </button>
+                {remDisc ? (
+                  <>
+                    <p className="text-md text-center text-red-600 mt-2">
+                      Dare to click only if you're Jr. Ambani 🤭
+                    </p>
+                    <button
+                      onClick={removeDiscount}
+                      className={
+                        totalQuantity > 0
+                          ? "bg-red-600 text-white w-full py-2 rounded-md mt-4"
+                          : "hidden"
+                      }
+                    >
+                      Remove Discount
+                    </button>
+                  </>
+                ) : (
+                  <button
+                    onClick={applyDiscount}
+                    className={
+                      totalQuantity > 0
+                        ? "bg-green-600 text-white w-full py-2 rounded-md mt-4"
+                        : "hidden"
+                    }
+                  >
+                    Apply Discount
+                  </button>
+                )}
               </div>
               <div className="bg-green-100 p-6 rounded-lg shadow-md">
                 <p className="text-lg font-semibold text-green-800">
