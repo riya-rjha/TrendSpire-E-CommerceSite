@@ -15,7 +15,6 @@ import Favourites from "./Pages/Favourites.jsx";
 import FAQs from "./Pages/FAQs.jsx";
 
 const App = () => {
-  const username = localStorage.getItem("username");
   const location = useLocation();
   const pathName = location.pathname;
 
