@@ -65,7 +65,7 @@ const NewArrivals = () => {
         autoHideDuration: 3000,
       });
     } catch (error) {
-      console.log(error.message);
+      // console.log(error.message);
       enqueueSnackbar("Product is already a favourite!", {
         variant: "warning",
         anchorOrigin: {

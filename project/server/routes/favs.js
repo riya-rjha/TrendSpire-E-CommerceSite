@@ -53,4 +53,19 @@ favsRouter.get("/", async (req, res) => {
   }
 });
 
+favsRouter.delete("/", async (req, res) => {
+  try {
+    const { userID, productID } = req.body;
+    let favProduct = await favsModel.findOne({ userID });
+    let favsArr = favProduct.favourites;
+    let filteredFavs = favsArr.filter((prod) => prod._id != productID);
+    favProduct.favourites = filteredFavs;
+    await favProduct.save();
+    return res.status(202).json("Successfully deleted particular favourite");
+  } catch (error) {
+    console.log(error.message);
+    return res.status(500).json("Internal Server Error");
+  }
+});
+
 export default favsRouter;
