@@ -7,7 +7,6 @@ const Cart = () => {
   const [products, setProducts] = useState([]);
   const [calSum, setCalcSum] = useState(0);
   const [totalQuantity, setTotalQuantity] = useState(0);
-  const [deductedDiscount, setDeductedDiscount] = useState(0);
   const [priceAfterDiscount, setPriceAfterDiscount] = useState(0);
   const [remDisc, setRemDisc] = useState(false);
 
@@ -25,16 +24,23 @@ const Cart = () => {
   useEffect(() => {
     const calculateSum = () => {
       let sum = 0;
+      let prodTotalAfterDiscount = 0;
       products.forEach((prod) => {
         let productTotal = prod.price * prod.quantity;
         sum += productTotal;
+        let indivDiscount = prod.discount;
+        // console.log("Indivi Discount: " + indivDiscount);
+        let newPrice = prod.price * prod.quantity;
+        // console.log("New Price: " + newPrice);
+        let newDiscountedPrice = newPrice - (indivDiscount * newPrice) / 100;
+        prodTotalAfterDiscount += newDiscountedPrice;
+        // console.log("Prd total after discount: " + prodTotalAfterDiscount);
       });
       setCalcSum(sum);
+      setPriceAfterDiscount(prodTotalAfterDiscount);
     };
     calculateSum();
   }, [products]);
-
-  useEffect(() => {}, []);
 
   const applyDiscount = () => {
     let currSum = calSum;
@@ -217,9 +223,14 @@ const Cart = () => {
                         <p className="text-gray-700">
                           {prod.name}{" "}
                           {remDisc ? (
-                            <span className="text-green-600 font-semibold transition-all delay-150">
-                              (-${prod.discount}%)
-                            </span>
+                            <>
+                              <span className="text-green-600 font-semibold transition-all delay-150">
+                                (-${prod.discount}%)
+                              </span>
+                              <span className="text-blue-600 font-semibold transition-all delay-150">
+                                (x {prod.quantity})
+                              </span>
+                            </>
                           ) : (
                             <span></span>
                           )}
@@ -231,7 +242,9 @@ const Cart = () => {
                             </span>
                             <span>
                               $
-                              {(prod.quantity * prod.price) - (prod.quantity * prod.discount * prod.price)/100}
+                              {prod.quantity * prod.price -
+                                (prod.quantity * prod.discount * prod.price) /
+                                  100}
                             </span>
                           </div>
                         ) : (
@@ -245,7 +258,11 @@ const Cart = () => {
                 <div className="flex justify-between mt-4 border-t pt-2">
                   <p className="text-lg font-semibold text-green-800">Total</p>
                   <p className="text-lg font-semibold text-green-800">
-                    ${calSum.toFixed(2)}
+                    {remDisc ? (
+                      <p> ${priceAfterDiscount.toFixed(2)}</p>
+                    ) : (
+                      <p>${calSum.toFixed(2)}</p>
+                    )}
                   </p>
                 </div>
                 {remDisc ? (
@@ -282,7 +299,11 @@ const Cart = () => {
                   Cart Total
                 </p>
                 <p className="text-2xl font-bold text-green-800 mt-2">
-                  ${calSum.toFixed(2)}
+                  {remDisc ? (
+                    <p>${priceAfterDiscount.toFixed(2)}</p>
+                  ) : (
+                    <p> ${calSum.toFixed(2)}</p>
+                  )}
                 </p>
                 <Link to="/order">
                   <button className="bg-green-600 text-white w-full py-2 rounded-md mt-4">
