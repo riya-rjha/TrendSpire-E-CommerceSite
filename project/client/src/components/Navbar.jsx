@@ -86,7 +86,6 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Simple Links for Cart and Favorites on Small Screens */}
         <div className="flex flex-col gap-4 md:hidden -mt-3 md:mt-4">
           <Link
             to="/cart"
@@ -102,7 +101,6 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Icons for Cart and Favorites on Larger Screens */}
         <div className="hidden md:flex gap-6">
           <Link to="/cart">
             <FaShoppingCart className="text-3xl cursor-pointer transition-all delay-75 hover:text-green-500" />

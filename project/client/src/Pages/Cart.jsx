@@ -13,6 +13,7 @@ const Cart = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     try {
       const getProductCart = async () => {
         const getCartForUser = await axios.get(
