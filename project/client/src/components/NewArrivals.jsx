@@ -36,7 +36,7 @@ const NewArrivals = () => {
         autoHideDuration: 3000,
       });
     } catch (error) {
-      enqueueSnackbar("Could not add to cart!", {
+      enqueueSnackbar("Login first!", {
         variant: "error",
         anchorOrigin: {
           vertical: "top",

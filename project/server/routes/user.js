@@ -53,7 +53,7 @@ userRouter.post("/login", async (req, res) => {
     return res.json({
       message: "Successfully logged in",
       username: ifUserExists.username,
-      userID: ifUserExists._id.toString()
+      userID: ifUserExists._id.toString(),
     });
   } catch (error) {
     console.log(error.message);

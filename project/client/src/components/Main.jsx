@@ -36,7 +36,7 @@ const Main = () => {
           Get Trend Insights with Our AI Chatbot
         </p>
         <Link to="/chat">
-          <button className="mt-6 px-6 py-3 bg-teal-900 text-white font-bold rounded-lg shadow hover:bg-teal-700 transition duration-300">
+          <button className="mt-6 px-6 py-3 bg-teal-900 text-white font-bold rounded-lg shadow hover:bg-teal-700 duration-300 hover:shadow-xl transform hover:scale-110 active:scale-95 transition-transform ease-in-out">
             TALK TO IVY!
           </button>
         </Link>
