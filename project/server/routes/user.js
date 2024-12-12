@@ -40,7 +40,7 @@ userRouter.post("/login", async (req, res) => {
     }
     const checkPassword = await bcrypt.compare(password, ifUserExists.password);
     if (!checkPassword) {
-      return res.json(401).json("Incorrect password");
+      return res.status(401).json("Incorrect password");
     }
     const signInJWT = jwt.sign(
       { id: ifUserExists._id },
