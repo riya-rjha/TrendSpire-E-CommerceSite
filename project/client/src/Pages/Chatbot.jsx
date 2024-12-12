@@ -6,6 +6,7 @@ const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleMessageByEnter = (e) => {
     if (e.key === "Enter") {
@@ -20,7 +21,7 @@ const Chatbot = () => {
 
   const handleSendMessage = async () => {
     if (!input.trim()) return; // Prevent sending empty messages
-
+    setLoading(true);
     const userMessage = input;
     setMessages((prevMessages) => [
       ...prevMessages,
@@ -46,8 +47,15 @@ const Chatbot = () => {
       setError(true);
     } finally {
       setInput(""); // Clear input field after sending
+      setLoading(false);
     }
   };
+
+  const LoadingSpinner = () => (
+    <div className="flex justify-center items-center w-full py-2">
+      <div className="w-8 h-8 border-4 border-t-4 border-green-600 border-t-green-800 rounded-full animate-spin"></div>
+    </div>
+  );
 
   return (
     <div className="flex flex-col items-center min-h-screen p-6 bg-[aliceblue]">
@@ -87,8 +95,8 @@ const Chatbot = () => {
           </div>
 
           {/* Chat Container */}
-          <div className=" flex-1 flex flex-col">
-            <div className=" flex-1 overflow-y-auto mb-4 max-h-[60vh]">
+          <div className="flex-1 flex flex-col">
+            <div className="flex-1 overflow-y-auto mb-4 max-h-[60vh]">
               {messages.map((message, index) => (
                 <div key={index} className={`message ${message.role}`}>
                   {error ? (
@@ -111,6 +119,8 @@ const Chatbot = () => {
                   )}
                 </div>
               ))}
+              
+              {loading && <LoadingSpinner />}
             </div>
 
             {/* Input Bar */}
